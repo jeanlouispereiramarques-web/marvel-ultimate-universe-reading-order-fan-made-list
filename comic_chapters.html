@@ -6,25 +6,27 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
     color: white;
-    background-image: url('ultimatesroster_card_0.jpg');
+    margin: 20px;
+    background: url('ultimatesroster_card_0.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
 }
 h1 { color: #ff4757; }
 ul { list-style-type: none; padding: 0; }
-li { background-color: rgba(47,53,66,0.8); margin: 5px 0; padding: 10px; border-radius: 8px; display: flex; align-items: center; }
-a { color: #70a1ff; text-decoration: none; margin-left: 10px; }
+li {
+    background-color: rgba(47, 53, 66, 0.8);
+    margin: 5px 0; padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+a { color: #70a1ff; text-decoration: none; margin-left: auto; }
 a:hover { text-decoration: underline; }
 input[type=checkbox] { margin-right: 10px; }
+.chapter { color: white; }
 .read { text-decoration: line-through; color: black; }
-.unread { color: white; }
 #filterBox { margin-bottom: 15px; }
-.chapter-name { flex: 1; }
-.chapter-date { margin-left: auto; padding-left: 15px; }
+.date { margin-left: 20px; color: #ffa502; }
 </style>
 </head>
 <body>
@@ -32,129 +34,126 @@ input[type=checkbox] { margin-right: 10px; }
 <label id="filterBox"><input type="checkbox" id="showUnreadOnly"> Show only unread</label>
 <h2>All Chapters</h2>
 <ul id="chapterList">
-<li id="chapter-0"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/1" target="_blank">Ultimate Spider-Man (2024-) #1</a></span><span class="chapter-date">10 January 2024</span></li>
-<li id="chapter-1"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/1" target="_blank">Ultimate Black Panther (2024-) #1</a></span><span class="chapter-date">07 February 2024</span></li>
-<li id="chapter-2"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/2" target="_blank">Ultimate Spider-Man (2024-) #2</a></span><span class="chapter-date">21 February 2024</span></li>
-<li id="chapter-3"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/1" target="_blank">Ultimate X-Men (2024-) #1</a></span><span class="chapter-date">06 March 2024</span></li>
-<li id="chapter-4"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/2" target="_blank">Ultimate Black Panther (2024-) #2</a></span><span class="chapter-date">13 March 2024</span></li>
-<li id="chapter-5"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/3" target="_blank">Ultimate Spider-Man (2024-) #3</a></span><span class="chapter-date">27 March 2024</span></li>
-<li id="chapter-6"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/2" target="_blank">Ultimate X-Men (2024-) #2</a></span><span class="chapter-date">10 April 2024</span></li>
-<li id="chapter-7"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/3" target="_blank">Ultimate Black Panther (2024-) #3</a></span><span class="chapter-date">17 April 2024</span></li>
-<li id="chapter-8"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/4" target="_blank">Ultimate Spider-Man (2024-) #4</a></span><span class="chapter-date">24 April 2024</span></li>
-<li id="chapter-9"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/3" target="_blank">Ultimate X-Men (2024-) #3</a></span><span class="chapter-date">15 May 2024</span></li>
-<li id="chapter-10"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/4" target="_blank">Ultimate Black Panther (2024-) #4</a></span><span class="chapter-date">22 May 2024</span></li>
-<li id="chapter-11"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/5" target="_blank">Ultimate Spider-Man (2024-) #5</a></span><span class="chapter-date">29 May 2024</span></li>
-<li id="chapter-12"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/1" target="_blank">The Ultimates (2024-) #1</a></span><span class="chapter-date">05 June 2024</span></li>
-<li id="chapter-13"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/4" target="_blank">Ultimate X-Men (2024-) #4</a></span><span class="chapter-date">12 June 2024</span></li>
-<li id="chapter-14"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/6" target="_blank">Ultimate Spider-Man (2024-) #6</a></span><span class="chapter-date">19 June 2024</span></li>
-<li id="chapter-15"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/5" target="_blank">Ultimate Black Panther (2024-) #5</a></span><span class="chapter-date">26 June 2024</span></li>
-<li id="chapter-16"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/2" target="_blank">The Ultimates (2024-) #2</a></span><span class="chapter-date">10 July 2024</span></li>
-<li id="chapter-17"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/5" target="_blank">Ultimate X-Men (2024-) #5</a></span><span class="chapter-date">17 July 2024</span></li>
-<li id="chapter-18"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/6" target="_blank">Ultimate Black Panther (2024-) #6</a></span><span class="chapter-date">24 July 2024</span></li>
-<li id="chapter-19"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/7" target="_blank">Ultimate Spider-Man (2024-) #7</a></span><span class="chapter-date">31 July 2024</span></li>
-<li id="chapter-20"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/7" target="_blank">Ultimate Black Panther (2024-) #7</a></span><span class="chapter-date">07 August 2024</span></li>
-<li id="chapter-21"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/3" target="_blank">The Ultimates (2024-) #3</a></span><span class="chapter-date">14 August 2024</span></li>
-<li id="chapter-22"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/8" target="_blank">Ultimate Spider-Man (2024-) #8</a></span><span class="chapter-date">21 August 2024</span></li>
-<li id="chapter-23"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/6" target="_blank">Ultimate X-Men (2024-) #6</a></span><span class="chapter-date">28 August 2024</span></li>
-<li id="chapter-24"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/4" target="_blank">The Ultimates (2024-) #4</a></span><span class="chapter-date">04 September 2024</span></li>
-<li id="chapter-25"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/8" target="_blank">Ultimate Black Panther (2024-) #8</a></span><span class="chapter-date">11 September 2024</span></li>
-<li id="chapter-26"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/7" target="_blank">Ultimate X-Men (2024-) #7</a></span><span class="chapter-date">18 September 2024</span></li>
-<li id="chapter-27"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/9" target="_blank">Ultimate Spider-Man (2024-) #9</a></span><span class="chapter-date">25 September 2024</span></li>
-<li id="chapter-28"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/9" target="_blank">Ultimate Black Panther (2024-) #9</a></span><span class="chapter-date">02 October 2024</span></li>
-<li id="chapter-29"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/5" target="_blank">The Ultimates (2024-) #5</a></span><span class="chapter-date">09 October 2024</span></li>
-<li id="chapter-30"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/10" target="_blank">Ultimate Spider-Man (2024-) #10</a></span><span class="chapter-date">17 October 2024</span></li>
-<li id="chapter-31"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/8" target="_blank">Ultimate X-Men (2024-) #8</a></span><span class="chapter-date">30 October 2024</span></li>
-<li id="chapter-32"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/6" target="_blank">The Ultimates (2024-) #6</a></span><span class="chapter-date">06 November 2024</span></li>
-<li id="chapter-33"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/9" target="_blank">Ultimate X-Men (2024-) #9</a></span><span class="chapter-date">13 November 2024</span></li>
-<li id="chapter-34"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/11" target="_blank">Ultimate Spider-Man (2024-) #11</a></span><span class="chapter-date">20 November 2024</span></li>
-<li id="chapter-35"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/10" target="_blank">Ultimate Black Panther (2024-) #10</a></span><span class="chapter-date">27 November 2024</span></li>
-<li id="chapter-36"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/7" target="_blank">The Ultimates (2024-) #7</a></span><span class="chapter-date">04 December 2024</span></li>
-<li id="chapter-37"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/10" target="_blank">Ultimate X-Men (2024-) #10</a></span><span class="chapter-date">12 December 2024</span></li>
-<li id="chapter-38"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/12" target="_blank">Ultimate Spider-Man (2024-) #12</a></span><span class="chapter-date">18 December 2024</span></li>
-<li id="chapter-39"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/11" target="_blank">Ultimate Black Panther (2024-) #11</a></span><span class="chapter-date">25 December 2024</span></li>
-<li id="chapter-40"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/8" target="_blank">The Ultimates (2024-) #8</a></span><span class="chapter-date">01 January 2025</span></li>
-<li id="chapter-41"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/12" target="_blank">Ultimate Black Panther (2024-) #12</a></span><span class="chapter-date">08 January 2025</span></li>
-<li id="chapter-42"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/1" target="_blank">Ultimate Wolverine (2025-) #1</a></span><span class="chapter-date">15 January 2025</span></li>
-<li id="chapter-43"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/13" target="_blank">Ultimate Spider-Man (2024-) #13</a></span><span class="chapter-date">22 January 2025</span></li>
-<li id="chapter-44"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/11" target="_blank">Ultimate X-Men (2024-) #11</a></span><span class="chapter-date">29 January 2025</span></li>
-<li id="chapter-45"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/9" target="_blank">The Ultimates (2024-) #9</a></span><span class="chapter-date">05 February 2025</span></li>
-<li id="chapter-46"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/13" target="_blank">Ultimate Black Panther (2024-) #13</a></span><span class="chapter-date">19 February 2025</span></li>
-<li id="chapter-47"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/2" target="_blank">Ultimate Wolverine (2025-) #2</a></span><span class="chapter-date">19 February 2025</span></li>
-<li id="chapter-48"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/14" target="_blank">Ultimate Spider-Man (2024-) #14</a></span><span class="chapter-date">26 February 2025</span></li>
-<li id="chapter-49"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/12" target="_blank">Ultimate X-Men (2024-) #12</a></span><span class="chapter-date">26 February 2025</span></li>
-<li id="chapter-50"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/10" target="_blank">The Ultimates (2024-) #10</a></span><span class="chapter-date">05 March 2025</span></li>
-<li id="chapter-51"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/14" target="_blank">Ultimate Black Panther (2024-) #14</a></span><span class="chapter-date">19 March 2025</span></li>
-<li id="chapter-52"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/13" target="_blank">Ultimate X-Men (2024-) #13</a></span><span class="chapter-date">19 March 2025</span></li>
-<li id="chapter-53"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/15" target="_blank">Ultimate Spider-Man (2024-) #15</a></span><span class="chapter-date">26 March 2025</span></li>
-<li id="chapter-54"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/3" target="_blank">Ultimate Wolverine (2025-) #3</a></span><span class="chapter-date">26 March 2025</span></li>
-<li id="chapter-55"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/14" target="_blank">Ultimate X-Men (2024-) #14</a></span><span class="chapter-date">02 April 2025</span></li>
-<li id="chapter-56"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/11" target="_blank">The Ultimates (2024-) #11</a></span><span class="chapter-date">09 April 2025</span></li>
-<li id="chapter-57"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/4" target="_blank">Ultimate Wolverine (2025-) #4</a></span><span class="chapter-date">16 April 2025</span></li>
-<li id="chapter-58"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/15" target="_blank">Ultimate Black Panther (2024-) #15</a></span><span class="chapter-date">23 April 2025</span></li>
-<li id="chapter-59"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/16" target="_blank">Ultimate Spider-Man (2024-) #16</a></span><span class="chapter-date">30 April 2025</span></li>
-<li id="chapter-60"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/5" target="_blank">Ultimate Wolverine (2025-) #5</a></span><span class="chapter-date">07 May 2025</span></li>
-<li id="chapter-61"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/16" target="_blank">Ultimate Black Panther (2024-) #16</a></span><span class="chapter-date">14 May 2025</span></li>
-<li id="chapter-62"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/15" target="_blank">Ultimate X-Men (2024-) #15</a></span><span class="chapter-date">14 May 2025</span></li>
-<li id="chapter-63"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/12" target="_blank">The Ultimates (2024-) #12</a></span><span class="chapter-date">21 May 2025</span></li>
-<li id="chapter-64"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/17" target="_blank">Ultimate Spider-Man (2024-) #17</a></span><span class="chapter-date">28 May 2025</span></li>
-<li id="chapter-65"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/1" target="_blank">Ultimate Spider-Man: Incursion (2025-) #1</a></span><span class="chapter-date">04 June 2025</span></li>
-<li id="chapter-66"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/6" target="_blank">Ultimate Wolverine (2025-) #6</a></span><span class="chapter-date">04 June 2025</span></li>
-<li id="chapter-67"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/17" target="_blank">Ultimate Black Panther (2024-) #17</a></span><span class="chapter-date">11 June 2025</span></li>
-<li id="chapter-68"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/16" target="_blank">Ultimate X-Men (2024-) #16</a></span><span class="chapter-date">11 June 2025</span></li>
-<li id="chapter-69"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/13" target="_blank">The Ultimates (2024-) #13</a></span><span class="chapter-date">18 June 2025</span></li>
-<li id="chapter-70"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/18" target="_blank">Ultimate Spider-Man (2024-) #18</a></span><span class="chapter-date">25 June 2025</span></li>
-<li id="chapter-71"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/7" target="_blank">Ultimate Wolverine (2025-) #7</a></span><span class="chapter-date">02 July 2025</span></li>
-<li id="chapter-72"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/2" target="_blank">Ultimate Spider-Man: Incursion (2025-) #2</a></span><span class="chapter-date">09 July 2025</span></li>
-<li id="chapter-73"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/18" target="_blank">Ultimate Black Panther (2024-) #18</a></span><span class="chapter-date">16 July 2025</span></li>
-<li id="chapter-74"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/17" target="_blank">Ultimate X-Men (2024-) #17</a></span><span class="chapter-date">16 July 2025</span></li>
-<li id="chapter-75"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/19" target="_blank">Ultimate Spider-Man (2024-) #19</a></span><span class="chapter-date">30 July 2025</span></li>
-<li id="chapter-76"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/14" target="_blank">The Ultimates (2024-) #14</a></span><span class="chapter-date">30 July 2025</span></li>
-<li id="chapter-77"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/18" target="_blank">Ultimate X-Men (2024-) #18</a></span><span class="chapter-date">06 August 2025</span></li>
-<li id="chapter-78"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/8" target="_blank">Ultimate Wolverine (2025-) #8</a></span><span class="chapter-date">06 August 2025</span></li>
-<li id="chapter-79"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/the-ultimates-2024/15" target="_blank">The Ultimates (2024-) #15</a></span><span class="chapter-date">13 August 2025</span></li>
-<li id="chapter-80"><input type="checkbox"  onclick="toggleRead(this)"><span class="chapter-name unread"><a href="https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/3" target="_blank">Ultimate Spider-Man: Incursion (2025-) #3</a></span><span class="chapter-date">13 August 2025</span></li>
+<li id="chapter-0"><input type="checkbox"  onclick="toggleRead(0)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/1" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #1</a> <span class="date">10 January 2024</span></li>
+<li id="chapter-1"><input type="checkbox"  onclick="toggleRead(1)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/1" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #1</a> <span class="date">07 February 2024</span></li>
+<li id="chapter-2"><input type="checkbox"  onclick="toggleRead(2)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/2" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #2</a> <span class="date">21 February 2024</span></li>
+<li id="chapter-3"><input type="checkbox"  onclick="toggleRead(3)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/1" target="_blank" class="chapter ">Ultimate X-Men (2024-) #1</a> <span class="date">06 March 2024</span></li>
+<li id="chapter-4"><input type="checkbox"  onclick="toggleRead(4)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/2" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #2</a> <span class="date">13 March 2024</span></li>
+<li id="chapter-5"><input type="checkbox"  onclick="toggleRead(5)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/3" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #3</a> <span class="date">27 March 2024</span></li>
+<li id="chapter-6"><input type="checkbox"  onclick="toggleRead(6)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/2" target="_blank" class="chapter ">Ultimate X-Men (2024-) #2</a> <span class="date">10 April 2024</span></li>
+<li id="chapter-7"><input type="checkbox"  onclick="toggleRead(7)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/3" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #3</a> <span class="date">17 April 2024</span></li>
+<li id="chapter-8"><input type="checkbox"  onclick="toggleRead(8)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/4" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #4</a> <span class="date">24 April 2024</span></li>
+<li id="chapter-9"><input type="checkbox"  onclick="toggleRead(9)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/3" target="_blank" class="chapter ">Ultimate X-Men (2024-) #3</a> <span class="date">15 May 2024</span></li>
+<li id="chapter-10"><input type="checkbox"  onclick="toggleRead(10)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/4" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #4</a> <span class="date">22 May 2024</span></li>
+<li id="chapter-11"><input type="checkbox"  onclick="toggleRead(11)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/5" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #5</a> <span class="date">29 May 2024</span></li>
+<li id="chapter-12"><input type="checkbox"  onclick="toggleRead(12)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/1" target="_blank" class="chapter ">The Ultimates (2024-) #1</a> <span class="date">05 June 2024</span></li>
+<li id="chapter-13"><input type="checkbox"  onclick="toggleRead(13)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/4" target="_blank" class="chapter ">Ultimate X-Men (2024-) #4</a> <span class="date">12 June 2024</span></li>
+<li id="chapter-14"><input type="checkbox"  onclick="toggleRead(14)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/6" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #6</a> <span class="date">19 June 2024</span></li>
+<li id="chapter-15"><input type="checkbox"  onclick="toggleRead(15)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/5" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #5</a> <span class="date">26 June 2024</span></li>
+<li id="chapter-16"><input type="checkbox"  onclick="toggleRead(16)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/2" target="_blank" class="chapter ">The Ultimates (2024-) #2</a> <span class="date">10 July 2024</span></li>
+<li id="chapter-17"><input type="checkbox"  onclick="toggleRead(17)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/5" target="_blank" class="chapter ">Ultimate X-Men (2024-) #5</a> <span class="date">17 July 2024</span></li>
+<li id="chapter-18"><input type="checkbox"  onclick="toggleRead(18)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/6" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #6</a> <span class="date">24 July 2024</span></li>
+<li id="chapter-19"><input type="checkbox"  onclick="toggleRead(19)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/7" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #7</a> <span class="date">31 July 2024</span></li>
+<li id="chapter-20"><input type="checkbox"  onclick="toggleRead(20)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/7" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #7</a> <span class="date">07 August 2024</span></li>
+<li id="chapter-21"><input type="checkbox"  onclick="toggleRead(21)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/3" target="_blank" class="chapter ">The Ultimates (2024-) #3</a> <span class="date">14 August 2024</span></li>
+<li id="chapter-22"><input type="checkbox"  onclick="toggleRead(22)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/8" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #8</a> <span class="date">21 August 2024</span></li>
+<li id="chapter-23"><input type="checkbox"  onclick="toggleRead(23)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/6" target="_blank" class="chapter ">Ultimate X-Men (2024-) #6</a> <span class="date">28 August 2024</span></li>
+<li id="chapter-24"><input type="checkbox"  onclick="toggleRead(24)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/4" target="_blank" class="chapter ">The Ultimates (2024-) #4</a> <span class="date">04 September 2024</span></li>
+<li id="chapter-25"><input type="checkbox"  onclick="toggleRead(25)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/8" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #8</a> <span class="date">11 September 2024</span></li>
+<li id="chapter-26"><input type="checkbox"  onclick="toggleRead(26)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/7" target="_blank" class="chapter ">Ultimate X-Men (2024-) #7</a> <span class="date">18 September 2024</span></li>
+<li id="chapter-27"><input type="checkbox"  onclick="toggleRead(27)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/9" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #9</a> <span class="date">25 September 2024</span></li>
+<li id="chapter-28"><input type="checkbox"  onclick="toggleRead(28)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/9" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #9</a> <span class="date">02 October 2024</span></li>
+<li id="chapter-29"><input type="checkbox"  onclick="toggleRead(29)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/5" target="_blank" class="chapter ">The Ultimates (2024-) #5</a> <span class="date">09 October 2024</span></li>
+<li id="chapter-30"><input type="checkbox"  onclick="toggleRead(30)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/10" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #10</a> <span class="date">17 October 2024</span></li>
+<li id="chapter-31"><input type="checkbox"  onclick="toggleRead(31)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/8" target="_blank" class="chapter ">Ultimate X-Men (2024-) #8</a> <span class="date">30 October 2024</span></li>
+<li id="chapter-32"><input type="checkbox"  onclick="toggleRead(32)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/6" target="_blank" class="chapter ">The Ultimates (2024-) #6</a> <span class="date">06 November 2024</span></li>
+<li id="chapter-33"><input type="checkbox"  onclick="toggleRead(33)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/9" target="_blank" class="chapter ">Ultimate X-Men (2024-) #9</a> <span class="date">13 November 2024</span></li>
+<li id="chapter-34"><input type="checkbox"  onclick="toggleRead(34)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/11" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #11</a> <span class="date">20 November 2024</span></li>
+<li id="chapter-35"><input type="checkbox"  onclick="toggleRead(35)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/10" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #10</a> <span class="date">27 November 2024</span></li>
+<li id="chapter-36"><input type="checkbox"  onclick="toggleRead(36)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/7" target="_blank" class="chapter ">The Ultimates (2024-) #7</a> <span class="date">04 December 2024</span></li>
+<li id="chapter-37"><input type="checkbox"  onclick="toggleRead(37)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/10" target="_blank" class="chapter ">Ultimate X-Men (2024-) #10</a> <span class="date">12 December 2024</span></li>
+<li id="chapter-38"><input type="checkbox"  onclick="toggleRead(38)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/12" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #12</a> <span class="date">18 December 2024</span></li>
+<li id="chapter-39"><input type="checkbox"  onclick="toggleRead(39)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/11" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #11</a> <span class="date">25 December 2024</span></li>
+<li id="chapter-40"><input type="checkbox"  onclick="toggleRead(40)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/8" target="_blank" class="chapter ">The Ultimates (2024-) #8</a> <span class="date">01 January 2025</span></li>
+<li id="chapter-41"><input type="checkbox"  onclick="toggleRead(41)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/12" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #12</a> <span class="date">08 January 2025</span></li>
+<li id="chapter-42"><input type="checkbox"  onclick="toggleRead(42)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/1" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #1</a> <span class="date">15 January 2025</span></li>
+<li id="chapter-43"><input type="checkbox"  onclick="toggleRead(43)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/13" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #13</a> <span class="date">22 January 2025</span></li>
+<li id="chapter-44"><input type="checkbox"  onclick="toggleRead(44)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/11" target="_blank" class="chapter ">Ultimate X-Men (2024-) #11</a> <span class="date">29 January 2025</span></li>
+<li id="chapter-45"><input type="checkbox"  onclick="toggleRead(45)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/9" target="_blank" class="chapter ">The Ultimates (2024-) #9</a> <span class="date">05 February 2025</span></li>
+<li id="chapter-46"><input type="checkbox"  onclick="toggleRead(46)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/13" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #13</a> <span class="date">19 February 2025</span></li>
+<li id="chapter-47"><input type="checkbox"  onclick="toggleRead(47)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/2" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #2</a> <span class="date">19 February 2025</span></li>
+<li id="chapter-48"><input type="checkbox"  onclick="toggleRead(48)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/14" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #14</a> <span class="date">26 February 2025</span></li>
+<li id="chapter-49"><input type="checkbox"  onclick="toggleRead(49)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/12" target="_blank" class="chapter ">Ultimate X-Men (2024-) #12</a> <span class="date">26 February 2025</span></li>
+<li id="chapter-50"><input type="checkbox"  onclick="toggleRead(50)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/10" target="_blank" class="chapter ">The Ultimates (2024-) #10</a> <span class="date">05 March 2025</span></li>
+<li id="chapter-51"><input type="checkbox"  onclick="toggleRead(51)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/14" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #14</a> <span class="date">19 March 2025</span></li>
+<li id="chapter-52"><input type="checkbox"  onclick="toggleRead(52)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/13" target="_blank" class="chapter ">Ultimate X-Men (2024-) #13</a> <span class="date">19 March 2025</span></li>
+<li id="chapter-53"><input type="checkbox"  onclick="toggleRead(53)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/15" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #15</a> <span class="date">26 March 2025</span></li>
+<li id="chapter-54"><input type="checkbox"  onclick="toggleRead(54)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/3" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #3</a> <span class="date">26 March 2025</span></li>
+<li id="chapter-55"><input type="checkbox"  onclick="toggleRead(55)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/14" target="_blank" class="chapter ">Ultimate X-Men (2024-) #14</a> <span class="date">02 April 2025</span></li>
+<li id="chapter-56"><input type="checkbox"  onclick="toggleRead(56)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/11" target="_blank" class="chapter ">The Ultimates (2024-) #11</a> <span class="date">09 April 2025</span></li>
+<li id="chapter-57"><input type="checkbox"  onclick="toggleRead(57)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/4" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #4</a> <span class="date">16 April 2025</span></li>
+<li id="chapter-58"><input type="checkbox"  onclick="toggleRead(58)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/15" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #15</a> <span class="date">23 April 2025</span></li>
+<li id="chapter-59"><input type="checkbox"  onclick="toggleRead(59)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/16" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #16</a> <span class="date">30 April 2025</span></li>
+<li id="chapter-60"><input type="checkbox"  onclick="toggleRead(60)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/5" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #5</a> <span class="date">07 May 2025</span></li>
+<li id="chapter-61"><input type="checkbox"  onclick="toggleRead(61)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/16" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #16</a> <span class="date">14 May 2025</span></li>
+<li id="chapter-62"><input type="checkbox"  onclick="toggleRead(62)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/15" target="_blank" class="chapter ">Ultimate X-Men (2024-) #15</a> <span class="date">14 May 2025</span></li>
+<li id="chapter-63"><input type="checkbox"  onclick="toggleRead(63)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/12" target="_blank" class="chapter ">The Ultimates (2024-) #12</a> <span class="date">21 May 2025</span></li>
+<li id="chapter-64"><input type="checkbox"  onclick="toggleRead(64)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/17" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #17</a> <span class="date">28 May 2025</span></li>
+<li id="chapter-65"><input type="checkbox"  onclick="toggleRead(65)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/1" target="_blank" class="chapter ">Ultimate Spider-Man: Incursion (2025-) #1</a> <span class="date">04 June 2025</span></li>
+<li id="chapter-66"><input type="checkbox"  onclick="toggleRead(66)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/6" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #6</a> <span class="date">04 June 2025</span></li>
+<li id="chapter-67"><input type="checkbox"  onclick="toggleRead(67)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/17" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #17</a> <span class="date">11 June 2025</span></li>
+<li id="chapter-68"><input type="checkbox"  onclick="toggleRead(68)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/16" target="_blank" class="chapter ">Ultimate X-Men (2024-) #16</a> <span class="date">11 June 2025</span></li>
+<li id="chapter-69"><input type="checkbox"  onclick="toggleRead(69)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/13" target="_blank" class="chapter ">The Ultimates (2024-) #13</a> <span class="date">18 June 2025</span></li>
+<li id="chapter-70"><input type="checkbox"  onclick="toggleRead(70)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/18" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #18</a> <span class="date">25 June 2025</span></li>
+<li id="chapter-71"><input type="checkbox"  onclick="toggleRead(71)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/7" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #7</a> <span class="date">02 July 2025</span></li>
+<li id="chapter-72"><input type="checkbox"  onclick="toggleRead(72)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/2" target="_blank" class="chapter ">Ultimate Spider-Man: Incursion (2025-) #2</a> <span class="date">09 July 2025</span></li>
+<li id="chapter-73"><input type="checkbox"  onclick="toggleRead(73)"> <a href="https://readcomicsonline.ru/comic/ultimate-black-panther-2024/18" target="_blank" class="chapter ">Ultimate Black Panther (2024-) #18</a> <span class="date">16 July 2025</span></li>
+<li id="chapter-74"><input type="checkbox"  onclick="toggleRead(74)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/17" target="_blank" class="chapter ">Ultimate X-Men (2024-) #17</a> <span class="date">16 July 2025</span></li>
+<li id="chapter-75"><input type="checkbox"  onclick="toggleRead(75)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-2024/19" target="_blank" class="chapter ">Ultimate Spider-Man (2024-) #19</a> <span class="date">30 July 2025</span></li>
+<li id="chapter-76"><input type="checkbox"  onclick="toggleRead(76)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/14" target="_blank" class="chapter ">The Ultimates (2024-) #14</a> <span class="date">30 July 2025</span></li>
+<li id="chapter-77"><input type="checkbox"  onclick="toggleRead(77)"> <a href="https://readcomicsonline.ru/comic/ultimate-xmen-2024/18" target="_blank" class="chapter ">Ultimate X-Men (2024-) #18</a> <span class="date">06 August 2025</span></li>
+<li id="chapter-78"><input type="checkbox"  onclick="toggleRead(78)"> <a href="https://readcomicsonline.ru/comic/ultimate-wolverine-2025/8" target="_blank" class="chapter ">Ultimate Wolverine (2025-) #8</a> <span class="date">06 August 2025</span></li>
+<li id="chapter-79"><input type="checkbox"  onclick="toggleRead(79)"> <a href="https://readcomicsonline.ru/comic/the-ultimates-2024/15" target="_blank" class="chapter ">The Ultimates (2024-) #15</a> <span class="date">13 August 2025</span></li>
+<li id="chapter-80"><input type="checkbox"  onclick="toggleRead(80)"> <a href="https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/3" target="_blank" class="chapter ">Ultimate Spider-Man: Incursion (2025-) #3</a> <span class="date">13 August 2025</span></li>
 
 </ul>
 <script>
-function toggleRead(box){
-    const li = box.parentElement;
-    const nameSpan = li.querySelector('.chapter-name');
-    if(box.checked){
-        nameSpan.classList.remove('unread');
-        nameSpan.classList.add('read');
+function toggleRead(index) {
+    const li = document.getElementById('chapter-'+index);
+    const cb = li.querySelector('input[type=checkbox]');
+    const a = li.querySelector('.chapter');
+    if(cb.checked){
+        a.classList.add('read');
     } else {
-        nameSpan.classList.remove('read');
-        nameSpan.classList.add('unread');
+        a.classList.remove('read');
     }
-    localStorage.setItem(nameSpan.textContent.trim(), box.checked);
+    localStorage.setItem('chapter-'+index, cb.checked);
     applyFilter();
 }
 
-// Restore checkbox state
-document.querySelectorAll('input[type=checkbox]').forEach(cb=>{
-    if(cb.id==="showUnreadOnly") return;
-    const li = cb.parentElement;
-    const nameSpan = li.querySelector('.chapter-name');
-    const state = localStorage.getItem(nameSpan.textContent.trim());
-    if(state==='true'){ cb.checked=true; nameSpan.classList.remove('unread'); nameSpan.classList.add('read'); }
-    else { cb.checked=false; nameSpan.classList.remove('read'); nameSpan.classList.add('unread'); }
+// Restore saved state
+document.querySelectorAll('#chapterList li').forEach((li, index) => {
+    const cb = li.querySelector('input[type=checkbox]');
+    const a = li.querySelector('.chapter');
+    const state = localStorage.getItem('chapter-'+index);
+    if(state === 'true') cb.checked = true;
+    if(cb.checked) a.classList.add('read');
 });
 
 function applyFilter(){
-    const showUnreadOnly = document.getElementById("showUnreadOnly").checked;
-    localStorage.setItem("showUnreadOnly", showUnreadOnly);
-    document.querySelectorAll('#chapterList li').forEach(li=>{
-        const nameSpan = li.querySelector('.chapter-name');
-        if(showUnreadOnly && nameSpan.classList.contains('read')){
-            li.style.display='none';
-        } else li.style.display='flex';
+    const showUnreadOnly = document.getElementById('showUnreadOnly').checked;
+    localStorage.setItem('showUnreadOnly', showUnreadOnly);
+    document.querySelectorAll('#chapterList li').forEach(li => {
+        const a = li.querySelector('.chapter');
+        const cb = li.querySelector('input[type=checkbox]');
+        li.style.display = (showUnreadOnly && cb.checked) ? 'none' : 'flex';
     });
 }
 
 // Restore filter preference
-const filterState = localStorage.getItem("showUnreadOnly");
-if(filterState==="true") document.getElementById("showUnreadOnly").checked=true;
-document.getElementById("showUnreadOnly").addEventListener("change", applyFilter);
+const filterState = localStorage.getItem('showUnreadOnly');
+if(filterState === "true") document.getElementById('showUnreadOnly').checked = true;
+document.getElementById('showUnreadOnly').addEventListener('change', applyFilter);
 applyFilter();
 </script>
 </body>
