@@ -24,9 +24,9 @@ body {
 @media only screen and (max-width:768px) {
     body {
         background: url('ultimatesroster_card_0.jpg') no-repeat center center fixed;
-        background-size: contain;
-        background-position: center top;
-        background-attachment: fixed;
+        background-size: 100% 100%; /* Fully fill phone screen */
+        background-attachment: fixed; /* Keep static when scrolling */
+        overflow-x: hidden;
     }
 }
 h1 { text-align:center; margin-top:20px; }
@@ -36,10 +36,10 @@ li {
     margin:5px 0; padding:10px; border-radius:8px;
     background: rgba(0,0,0,0.5);
 }
-li.unchecked span:first-child,
-li.unchecked span:first-child a { color:white; text-decoration:none; }
-li.checked span:first-child,
-li.checked span:first-child a { color:black; text-decoration: line-through; }
+li.unchecked span:first-child a,
+li.unchecked span:first-child { color: white; text-decoration:none; }
+li.checked span:first-child a,
+li.checked span:first-child { color: black; text-decoration: line-through; }
 .date { margin-left:20px; }
 .filters { text-align:center; margin-bottom:20px; }
 .filters button { margin:0 10px; padding:5px 10px; }
@@ -62,176 +62,176 @@ li.checked span:first-child a { color:black; text-decoration: line-through; }
 <ul id="chapters">
         <li id="chapter-0" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(0)">
-            <span>Ultimate Spider-Man (2024-) #1</span>
-            <span class="date">10 Jan. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #19</span>
+            <span class="date">30 Jul. 2025</span>
         </li>
         
         <li id="chapter-1" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(1)">
-            <span>Ultimate Black Panther (2024-) #1</span>
-            <span class="date">07 Feb. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #18</span>
+            <span class="date">25 Jun. 2025</span>
         </li>
         
         <li id="chapter-2" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(2)">
-            <span>Ultimate Spider-Man (2024-) #2</span>
-            <span class="date">21 Feb. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #17</span>
+            <span class="date">28 May. 2025</span>
         </li>
         
         <li id="chapter-3" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(3)">
-            <span>Ultimate X-Men (2024-) #1</span>
-            <span class="date">06 Mar. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #16</span>
+            <span class="date">30 Apr. 2025</span>
         </li>
         
         <li id="chapter-4" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(4)">
-            <span>Ultimate Black Panther (2024-) #2</span>
-            <span class="date">13 Mar. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #15</span>
+            <span class="date">26 Mar. 2025</span>
         </li>
         
         <li id="chapter-5" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(5)">
-            <span>Ultimate Spider-Man (2024-) #3</span>
-            <span class="date">27 Mar. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #14</span>
+            <span class="date">26 Feb. 2025</span>
         </li>
         
         <li id="chapter-6" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(6)">
-            <span>Ultimate X-Men (2024-) #2</span>
-            <span class="date">10 Apr. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #13</span>
+            <span class="date">22 Jan. 2025</span>
         </li>
         
         <li id="chapter-7" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(7)">
-            <span>Ultimate Black Panther (2024-) #3</span>
-            <span class="date">17 Apr. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #12</span>
+            <span class="date">18 Dec. 2024</span>
         </li>
         
         <li id="chapter-8" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(8)">
-            <span>Ultimate Spider-Man (2024-) #4</span>
-            <span class="date">24 Apr. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #11</span>
+            <span class="date">20 Nov. 2024</span>
         </li>
         
         <li id="chapter-9" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(9)">
-            <span>Ultimate X-Men (2024-) #3</span>
-            <span class="date">15 May. 2024</span>
+            <span>Ultimate Spider-Man (2024-) #10</span>
+            <span class="date">17 Oct. 2024</span>
         </li>
         
         <li id="chapter-10" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(10)">
-            <span>Ultimate Black Panther (2024-) #4</span>
-            <span class="date">22 May. 2024</span>
-        </li>
-        
-        <li id="chapter-11" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(11)">
-            <span>Ultimate Spider-Man (2024-) #5</span>
-            <span class="date">29 May. 2024</span>
-        </li>
-        
-        <li id="chapter-12" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(12)">
-            <span>The Ultimates (2024-) #1</span>
-            <span class="date">05 Jun. 2024</span>
-        </li>
-        
-        <li id="chapter-13" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(13)">
-            <span>Ultimate X-Men (2024-) #4</span>
-            <span class="date">12 Jun. 2024</span>
-        </li>
-        
-        <li id="chapter-14" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(14)">
-            <span>Ultimate Spider-Man (2024-) #6</span>
-            <span class="date">19 Jun. 2024</span>
-        </li>
-        
-        <li id="chapter-15" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(15)">
-            <span>Ultimate Black Panther (2024-) #5</span>
-            <span class="date">26 Jun. 2024</span>
-        </li>
-        
-        <li id="chapter-16" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(16)">
-            <span>The Ultimates (2024-) #2</span>
-            <span class="date">10 Jul. 2024</span>
-        </li>
-        
-        <li id="chapter-17" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(17)">
-            <span>Ultimate X-Men (2024-) #5</span>
-            <span class="date">17 Jul. 2024</span>
-        </li>
-        
-        <li id="chapter-18" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(18)">
-            <span>Ultimate Black Panther (2024-) #6</span>
-            <span class="date">24 Jul. 2024</span>
-        </li>
-        
-        <li id="chapter-19" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(19)">
-            <span>Ultimate Spider-Man (2024-) #7</span>
-            <span class="date">31 Jul. 2024</span>
-        </li>
-        
-        <li id="chapter-20" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(20)">
-            <span>Ultimate Black Panther (2024-) #7</span>
-            <span class="date">07 Aug. 2024</span>
-        </li>
-        
-        <li id="chapter-21" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(21)">
-            <span>The Ultimates (2024-) #3</span>
-            <span class="date">14 Aug. 2024</span>
-        </li>
-        
-        <li id="chapter-22" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(22)">
-            <span>Ultimate Spider-Man (2024-) #8</span>
-            <span class="date">21 Aug. 2024</span>
-        </li>
-        
-        <li id="chapter-23" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(23)">
-            <span>Ultimate X-Men (2024-) #6</span>
-            <span class="date">28 Aug. 2024</span>
-        </li>
-        
-        <li id="chapter-24" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(24)">
-            <span>The Ultimates (2024-) #4</span>
-            <span class="date">04 Sep. 2024</span>
-        </li>
-        
-        <li id="chapter-25" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(25)">
-            <span>Ultimate Black Panther (2024-) #8</span>
-            <span class="date">11 Sep. 2024</span>
-        </li>
-        
-        <li id="chapter-26" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(26)">
-            <span>Ultimate X-Men (2024-) #7</span>
-            <span class="date">18 Sep. 2024</span>
-        </li>
-        
-        <li id="chapter-27" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(27)">
             <span>Ultimate Spider-Man (2024-) #9</span>
             <span class="date">25 Sep. 2024</span>
         </li>
         
+        <li id="chapter-11" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(11)">
+            <span>Ultimate Spider-Man (2024-) #8</span>
+            <span class="date">21 Aug. 2024</span>
+        </li>
+        
+        <li id="chapter-12" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(12)">
+            <span>Ultimate Spider-Man (2024-) #7</span>
+            <span class="date">31 Jul. 2024</span>
+        </li>
+        
+        <li id="chapter-13" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(13)">
+            <span>Ultimate Spider-Man (2024-) #6</span>
+            <span class="date">19 Jun. 2024</span>
+        </li>
+        
+        <li id="chapter-14" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(14)">
+            <span>Ultimate Spider-Man (2024-) #5</span>
+            <span class="date">29 May. 2024</span>
+        </li>
+        
+        <li id="chapter-15" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(15)">
+            <span>Ultimate Spider-Man (2024-) #4</span>
+            <span class="date">24 Apr. 2024</span>
+        </li>
+        
+        <li id="chapter-16" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(16)">
+            <span>Ultimate Spider-Man (2024-) #3</span>
+            <span class="date">27 Mar. 2024</span>
+        </li>
+        
+        <li id="chapter-17" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(17)">
+            <span>Ultimate Spider-Man (2024-) #2</span>
+            <span class="date">21 Feb. 2024</span>
+        </li>
+        
+        <li id="chapter-18" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(18)">
+            <span>Ultimate Spider-Man (2024-) #1</span>
+            <span class="date">10 Jan. 2024</span>
+        </li>
+        
+        <li id="chapter-19" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(19)">
+            <span>The Ultimates (2024-) #15</span>
+            <span class="date">13 Aug. 2025</span>
+        </li>
+        
+        <li id="chapter-20" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(20)">
+            <span>The Ultimates (2024-) #14</span>
+            <span class="date">30 Jul. 2025</span>
+        </li>
+        
+        <li id="chapter-21" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(21)">
+            <span>The Ultimates (2024-) #13</span>
+            <span class="date">18 Jun. 2025</span>
+        </li>
+        
+        <li id="chapter-22" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(22)">
+            <span>The Ultimates (2024-) #12</span>
+            <span class="date">21 May. 2025</span>
+        </li>
+        
+        <li id="chapter-23" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(23)">
+            <span>The Ultimates (2024-) #11</span>
+            <span class="date">09 Apr. 2025</span>
+        </li>
+        
+        <li id="chapter-24" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(24)">
+            <span>The Ultimates (2024-) #10</span>
+            <span class="date">05 Mar. 2025</span>
+        </li>
+        
+        <li id="chapter-25" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(25)">
+            <span>The Ultimates (2024-) #9</span>
+            <span class="date">05 Feb. 2025</span>
+        </li>
+        
+        <li id="chapter-26" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(26)">
+            <span>The Ultimates (2024-) #8</span>
+            <span class="date">01 Jan. 2025</span>
+        </li>
+        
+        <li id="chapter-27" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(27)">
+            <span>The Ultimates (2024-) #7</span>
+            <span class="date">04 Dec. 2024</span>
+        </li>
+        
         <li id="chapter-28" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(28)">
-            <span>Ultimate Black Panther (2024-) #9</span>
-            <span class="date">02 Oct. 2024</span>
+            <span>The Ultimates (2024-) #6</span>
+            <span class="date">06 Nov. 2024</span>
         </li>
         
         <li id="chapter-29" class="unchecked">
@@ -242,308 +242,308 @@ li.checked span:first-child a { color:black; text-decoration: line-through; }
         
         <li id="chapter-30" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(30)">
-            <span>Ultimate Spider-Man (2024-) #10</span>
-            <span class="date">17 Oct. 2024</span>
+            <span>The Ultimates (2024-) #4</span>
+            <span class="date">04 Sep. 2024</span>
         </li>
         
         <li id="chapter-31" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(31)">
-            <span>Ultimate X-Men (2024-) #8</span>
-            <span class="date">30 Oct. 2024</span>
+            <span>The Ultimates (2024-) #3</span>
+            <span class="date">14 Aug. 2024</span>
         </li>
         
         <li id="chapter-32" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(32)">
-            <span>The Ultimates (2024-) #6</span>
-            <span class="date">06 Nov. 2024</span>
+            <span>The Ultimates (2024-) #2</span>
+            <span class="date">10 Jul. 2024</span>
         </li>
         
         <li id="chapter-33" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(33)">
-            <span>Ultimate X-Men (2024-) #9</span>
-            <span class="date">13 Nov. 2024</span>
+            <span>The Ultimates (2024-) #1</span>
+            <span class="date">05 Jun. 2024</span>
         </li>
         
         <li id="chapter-34" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(34)">
-            <span>Ultimate Spider-Man (2024-) #11</span>
-            <span class="date">20 Nov. 2024</span>
-        </li>
-        
-        <li id="chapter-35" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(35)">
-            <span>Ultimate Black Panther (2024-) #10</span>
-            <span class="date">27 Nov. 2024</span>
-        </li>
-        
-        <li id="chapter-36" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(36)">
-            <span>The Ultimates (2024-) #7</span>
-            <span class="date">04 Dec. 2024</span>
-        </li>
-        
-        <li id="chapter-37" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(37)">
-            <span>Ultimate X-Men (2024-) #10</span>
-            <span class="date">12 Dec. 2024</span>
-        </li>
-        
-        <li id="chapter-38" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(38)">
-            <span>Ultimate Spider-Man (2024-) #12</span>
-            <span class="date">18 Dec. 2024</span>
-        </li>
-        
-        <li id="chapter-39" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(39)">
-            <span>Ultimate Black Panther (2024-) #11</span>
-            <span class="date">25 Dec. 2024</span>
-        </li>
-        
-        <li id="chapter-40" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(40)">
-            <span>The Ultimates (2024-) #8</span>
-            <span class="date">01 Jan. 2025</span>
-        </li>
-        
-        <li id="chapter-41" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(41)">
-            <span>Ultimate Black Panther (2024-) #12</span>
-            <span class="date">08 Jan. 2025</span>
-        </li>
-        
-        <li id="chapter-42" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(42)">
-            <span>Ultimate Wolverine (2025-) #1</span>
-            <span class="date">15 Jan. 2025</span>
-        </li>
-        
-        <li id="chapter-43" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(43)">
-            <span>Ultimate Spider-Man (2024-) #13</span>
-            <span class="date">22 Jan. 2025</span>
-        </li>
-        
-        <li id="chapter-44" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(44)">
-            <span>Ultimate X-Men (2024-) #11</span>
-            <span class="date">29 Jan. 2025</span>
-        </li>
-        
-        <li id="chapter-45" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(45)">
-            <span>The Ultimates (2024-) #9</span>
-            <span class="date">05 Feb. 2025</span>
-        </li>
-        
-        <li id="chapter-46" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(46)">
-            <span>Ultimate Black Panther (2024-) #13</span>
-            <span class="date">19 Feb. 2025</span>
-        </li>
-        
-        <li id="chapter-47" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(47)">
-            <span>Ultimate Wolverine (2025-) #2</span>
-            <span class="date">19 Feb. 2025</span>
-        </li>
-        
-        <li id="chapter-48" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(48)">
-            <span>Ultimate Spider-Man (2024-) #14</span>
-            <span class="date">26 Feb. 2025</span>
-        </li>
-        
-        <li id="chapter-49" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(49)">
-            <span>Ultimate X-Men (2024-) #12</span>
-            <span class="date">26 Feb. 2025</span>
-        </li>
-        
-        <li id="chapter-50" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(50)">
-            <span>The Ultimates (2024-) #10</span>
-            <span class="date">05 Mar. 2025</span>
-        </li>
-        
-        <li id="chapter-51" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(51)">
-            <span>Ultimate Black Panther (2024-) #14</span>
-            <span class="date">19 Mar. 2025</span>
-        </li>
-        
-        <li id="chapter-52" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(52)">
-            <span>Ultimate X-Men (2024-) #13</span>
-            <span class="date">19 Mar. 2025</span>
-        </li>
-        
-        <li id="chapter-53" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(53)">
-            <span>Ultimate Spider-Man (2024-) #15</span>
-            <span class="date">26 Mar. 2025</span>
-        </li>
-        
-        <li id="chapter-54" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(54)">
-            <span>Ultimate Wolverine (2025-) #3</span>
-            <span class="date">26 Mar. 2025</span>
-        </li>
-        
-        <li id="chapter-55" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(55)">
-            <span>Ultimate X-Men (2024-) #14</span>
-            <span class="date">02 Apr. 2025</span>
-        </li>
-        
-        <li id="chapter-56" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(56)">
-            <span>The Ultimates (2024-) #11</span>
-            <span class="date">09 Apr. 2025</span>
-        </li>
-        
-        <li id="chapter-57" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(57)">
-            <span>Ultimate Wolverine (2025-) #4</span>
-            <span class="date">16 Apr. 2025</span>
-        </li>
-        
-        <li id="chapter-58" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(58)">
-            <span>Ultimate Black Panther (2024-) #15</span>
-            <span class="date">23 Apr. 2025</span>
-        </li>
-        
-        <li id="chapter-59" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(59)">
-            <span>Ultimate Spider-Man (2024-) #16</span>
-            <span class="date">30 Apr. 2025</span>
-        </li>
-        
-        <li id="chapter-60" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(60)">
-            <span>Ultimate Wolverine (2025-) #5</span>
-            <span class="date">07 May. 2025</span>
-        </li>
-        
-        <li id="chapter-61" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(61)">
-            <span>Ultimate Black Panther (2024-) #16</span>
-            <span class="date">14 May. 2025</span>
-        </li>
-        
-        <li id="chapter-62" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(62)">
-            <span>Ultimate X-Men (2024-) #15</span>
-            <span class="date">14 May. 2025</span>
-        </li>
-        
-        <li id="chapter-63" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(63)">
-            <span>The Ultimates (2024-) #12</span>
-            <span class="date">21 May. 2025</span>
-        </li>
-        
-        <li id="chapter-64" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(64)">
-            <span>Ultimate Spider-Man (2024-) #17</span>
-            <span class="date">28 May. 2025</span>
-        </li>
-        
-        <li id="chapter-65" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(65)">
-            <span>Ultimate Spider-Man: Incursion (2025-) #1</span>
-            <span class="date">04 Jun. 2025</span>
-        </li>
-        
-        <li id="chapter-66" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(66)">
-            <span>Ultimate Wolverine (2025-) #6</span>
-            <span class="date">04 Jun. 2025</span>
-        </li>
-        
-        <li id="chapter-67" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(67)">
-            <span>Ultimate Black Panther (2024-) #17</span>
-            <span class="date">11 Jun. 2025</span>
-        </li>
-        
-        <li id="chapter-68" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(68)">
-            <span>Ultimate X-Men (2024-) #16</span>
-            <span class="date">11 Jun. 2025</span>
-        </li>
-        
-        <li id="chapter-69" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(69)">
-            <span>The Ultimates (2024-) #13</span>
-            <span class="date">18 Jun. 2025</span>
-        </li>
-        
-        <li id="chapter-70" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(70)">
-            <span>Ultimate Spider-Man (2024-) #18</span>
-            <span class="date">25 Jun. 2025</span>
-        </li>
-        
-        <li id="chapter-71" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(71)">
-            <span>Ultimate Wolverine (2025-) #7</span>
-            <span class="date">02 Jul. 2025</span>
-        </li>
-        
-        <li id="chapter-72" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(72)">
-            <span>Ultimate Spider-Man: Incursion (2025-) #2</span>
-            <span class="date">09 Jul. 2025</span>
-        </li>
-        
-        <li id="chapter-73" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(73)">
             <span>Ultimate Black Panther (2024-) #18</span>
             <span class="date">16 Jul. 2025</span>
         </li>
         
-        <li id="chapter-74" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(74)">
-            <span>Ultimate X-Men (2024-) #17</span>
-            <span class="date">16 Jul. 2025</span>
+        <li id="chapter-35" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(35)">
+            <span>Ultimate Black Panther (2024-) #17</span>
+            <span class="date">11 Jun. 2025</span>
         </li>
         
-        <li id="chapter-75" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(75)">
-            <span>Ultimate Spider-Man (2024-) #19</span>
-            <span class="date">30 Jul. 2025</span>
+        <li id="chapter-36" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(36)">
+            <span>Ultimate Black Panther (2024-) #16</span>
+            <span class="date">14 May. 2025</span>
         </li>
         
-        <li id="chapter-76" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(76)">
-            <span>The Ultimates (2024-) #14</span>
-            <span class="date">30 Jul. 2025</span>
+        <li id="chapter-37" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(37)">
+            <span>Ultimate Black Panther (2024-) #15</span>
+            <span class="date">23 Apr. 2025</span>
         </li>
         
-        <li id="chapter-77" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(77)">
+        <li id="chapter-38" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(38)">
+            <span>Ultimate Black Panther (2024-) #14</span>
+            <span class="date">19 Mar. 2025</span>
+        </li>
+        
+        <li id="chapter-39" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(39)">
+            <span>Ultimate Black Panther (2024-) #13</span>
+            <span class="date">19 Feb. 2025</span>
+        </li>
+        
+        <li id="chapter-40" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(40)">
+            <span>Ultimate Black Panther (2024-) #12</span>
+            <span class="date">08 Jan. 2025</span>
+        </li>
+        
+        <li id="chapter-41" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(41)">
+            <span>Ultimate Black Panther (2024-) #11</span>
+            <span class="date">25 Dec. 2024</span>
+        </li>
+        
+        <li id="chapter-42" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(42)">
+            <span>Ultimate Black Panther (2024-) #10</span>
+            <span class="date">27 Nov. 2024</span>
+        </li>
+        
+        <li id="chapter-43" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(43)">
+            <span>Ultimate Black Panther (2024-) #9</span>
+            <span class="date">02 Oct. 2024</span>
+        </li>
+        
+        <li id="chapter-44" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(44)">
+            <span>Ultimate Black Panther (2024-) #8</span>
+            <span class="date">11 Sep. 2024</span>
+        </li>
+        
+        <li id="chapter-45" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(45)">
+            <span>Ultimate Black Panther (2024-) #7</span>
+            <span class="date">07 Aug. 2024</span>
+        </li>
+        
+        <li id="chapter-46" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(46)">
+            <span>Ultimate Black Panther (2024-) #6</span>
+            <span class="date">24 Jul. 2024</span>
+        </li>
+        
+        <li id="chapter-47" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(47)">
+            <span>Ultimate Black Panther (2024-) #5</span>
+            <span class="date">26 Jun. 2024</span>
+        </li>
+        
+        <li id="chapter-48" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(48)">
+            <span>Ultimate Black Panther (2024-) #4</span>
+            <span class="date">22 May. 2024</span>
+        </li>
+        
+        <li id="chapter-49" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(49)">
+            <span>Ultimate Black Panther (2024-) #3</span>
+            <span class="date">17 Apr. 2024</span>
+        </li>
+        
+        <li id="chapter-50" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(50)">
+            <span>Ultimate Black Panther (2024-) #2</span>
+            <span class="date">13 Mar. 2024</span>
+        </li>
+        
+        <li id="chapter-51" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(51)">
+            <span>Ultimate Black Panther (2024-) #1</span>
+            <span class="date">07 Feb. 2024</span>
+        </li>
+        
+        <li id="chapter-52" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(52)">
             <span>Ultimate X-Men (2024-) #18</span>
             <span class="date">06 Aug. 2025</span>
         </li>
         
-        <li id="chapter-78" class="unchecked">
-            <input type="checkbox"  onchange="toggleChapter(78)">
+        <li id="chapter-53" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(53)">
+            <span>Ultimate X-Men (2024-) #17</span>
+            <span class="date">16 Jul. 2025</span>
+        </li>
+        
+        <li id="chapter-54" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(54)">
+            <span>Ultimate X-Men (2024-) #16</span>
+            <span class="date">11 Jun. 2025</span>
+        </li>
+        
+        <li id="chapter-55" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(55)">
+            <span>Ultimate X-Men (2024-) #15</span>
+            <span class="date">14 May. 2025</span>
+        </li>
+        
+        <li id="chapter-56" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(56)">
+            <span>Ultimate X-Men (2024-) #14</span>
+            <span class="date">02 Apr. 2025</span>
+        </li>
+        
+        <li id="chapter-57" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(57)">
+            <span>Ultimate X-Men (2024-) #13</span>
+            <span class="date">19 Mar. 2025</span>
+        </li>
+        
+        <li id="chapter-58" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(58)">
+            <span>Ultimate X-Men (2024-) #12</span>
+            <span class="date">26 Feb. 2025</span>
+        </li>
+        
+        <li id="chapter-59" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(59)">
+            <span>Ultimate X-Men (2024-) #11</span>
+            <span class="date">29 Jan. 2025</span>
+        </li>
+        
+        <li id="chapter-60" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(60)">
+            <span>Ultimate X-Men (2024-) #10</span>
+            <span class="date">12 Dec. 2024</span>
+        </li>
+        
+        <li id="chapter-61" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(61)">
+            <span>Ultimate X-Men (2024-) #9</span>
+            <span class="date">13 Nov. 2024</span>
+        </li>
+        
+        <li id="chapter-62" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(62)">
+            <span>Ultimate X-Men (2024-) #8</span>
+            <span class="date">30 Oct. 2024</span>
+        </li>
+        
+        <li id="chapter-63" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(63)">
+            <span>Ultimate X-Men (2024-) #7</span>
+            <span class="date">18 Sep. 2024</span>
+        </li>
+        
+        <li id="chapter-64" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(64)">
+            <span>Ultimate X-Men (2024-) #6</span>
+            <span class="date">28 Aug. 2024</span>
+        </li>
+        
+        <li id="chapter-65" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(65)">
+            <span>Ultimate X-Men (2024-) #5</span>
+            <span class="date">17 Jul. 2024</span>
+        </li>
+        
+        <li id="chapter-66" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(66)">
+            <span>Ultimate X-Men (2024-) #4</span>
+            <span class="date">12 Jun. 2024</span>
+        </li>
+        
+        <li id="chapter-67" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(67)">
+            <span>Ultimate X-Men (2024-) #3</span>
+            <span class="date">15 May. 2024</span>
+        </li>
+        
+        <li id="chapter-68" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(68)">
+            <span>Ultimate X-Men (2024-) #2</span>
+            <span class="date">10 Apr. 2024</span>
+        </li>
+        
+        <li id="chapter-69" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(69)">
+            <span>Ultimate X-Men (2024-) #1</span>
+            <span class="date">06 Mar. 2024</span>
+        </li>
+        
+        <li id="chapter-70" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(70)">
+            <span>Ultimate Spider-Man: Incursion (2025-) #3</span>
+            <span class="date">13 Aug. 2025</span>
+        </li>
+        
+        <li id="chapter-71" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(71)">
+            <span>Ultimate Spider-Man: Incursion (2025-) #2</span>
+            <span class="date">09 Jul. 2025</span>
+        </li>
+        
+        <li id="chapter-72" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(72)">
+            <span>Ultimate Spider-Man: Incursion (2025-) #1</span>
+            <span class="date">04 Jun. 2025</span>
+        </li>
+        
+        <li id="chapter-73" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(73)">
             <span>Ultimate Wolverine (2025-) #8</span>
             <span class="date">06 Aug. 2025</span>
         </li>
         
+        <li id="chapter-74" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(74)">
+            <span>Ultimate Wolverine (2025-) #7</span>
+            <span class="date">02 Jul. 2025</span>
+        </li>
+        
+        <li id="chapter-75" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(75)">
+            <span>Ultimate Wolverine (2025-) #6</span>
+            <span class="date">04 Jun. 2025</span>
+        </li>
+        
+        <li id="chapter-76" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(76)">
+            <span>Ultimate Wolverine (2025-) #5</span>
+            <span class="date">07 May. 2025</span>
+        </li>
+        
+        <li id="chapter-77" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(77)">
+            <span>Ultimate Wolverine (2025-) #4</span>
+            <span class="date">16 Apr. 2025</span>
+        </li>
+        
+        <li id="chapter-78" class="unchecked">
+            <input type="checkbox"  onchange="toggleChapter(78)">
+            <span>Ultimate Wolverine (2025-) #3</span>
+            <span class="date">26 Mar. 2025</span>
+        </li>
+        
         <li id="chapter-79" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(79)">
-            <span>The Ultimates (2024-) #15</span>
-            <span class="date">13 Aug. 2025</span>
+            <span>Ultimate Wolverine (2025-) #2</span>
+            <span class="date">19 Feb. 2025</span>
         </li>
         
         <li id="chapter-80" class="unchecked">
             <input type="checkbox"  onchange="toggleChapter(80)">
-            <span>Ultimate Spider-Man: Incursion (2025-) #3</span>
-            <span class="date">13 Aug. 2025</span>
+            <span>Ultimate Wolverine (2025-) #1</span>
+            <span class="date">15 Jan. 2025</span>
         </li>
         </ul>
 <script>
