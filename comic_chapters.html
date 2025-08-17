@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marvel Ultimate Reading Order</title>
+<title>Comic Chapters</title>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7H4063B8W"></script>
@@ -15,38 +15,43 @@
     
 <style>
 body {
+    margin:0; padding:0;
     font-family: Arial, sans-serif;
     color: white;
-    margin: 0;
-    padding: 20px;
     background: url('ultimatesroster_card_1.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-@media only screen and (max-width:768px){
-    body {
-        background: url('ultimatesroster_card_0.jpg') no-repeat center center fixed;
-        background-size: cover;
-    }
+@media only screen and (max-width:768px) {
+    body { background: url('ultimatesroster_card_0.jpg') no-repeat center center fixed; background-size: contain; }
 }
-h1 { text-align:center; color:#ff4757; }
-ul { list-style:none; padding:0; }
+h1 { text-align:center; margin-top:20px; }
+ul { list-style:none; padding:0; margin:20px; }
 li {
-    margin:5px 0;
-    padding:10px;
-    border-radius:8px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display:flex; justify-content:space-between; align-items:center;
+    margin:5px 0; padding:10px; border-radius:8px;
     background: rgba(0,0,0,0.5);
 }
-li.unchecked span:first-child { color: white; }
-li.checked span:first-child { color:black; text-decoration:line-through; }
-.date { margin-left: 20px; }
-input[type=checkbox] { margin-right:10px; transform: scale(1.2); }
+li.unchecked span:first-child { color:white; }
+li.checked span:first-child { color:black; text-decoration: line-through; }
+.date { margin-left:20px; }
+.filters { text-align:center; margin-bottom:20px; }
+.filters button { margin:0 10px; padding:5px 10px; }
+
+@media only screen and (max-width:768px) {
+    body { padding:20px; }
+    h1 { font-size:2em; }
+    li { flex-direction:column; align-items:flex-start; padding:10px; }
+    .date { font-size:0.7em; margin-left:0; margin-top:5px; }
+}
 </style>
 </head>
 <body>
-<h1>Marvel Ultimate Reading Order</h1>
+<h1>Comic Chapters</h1>
+<div class="filters">
+    <button onclick="filterChapters('all')">All</button>
+    <button onclick="filterChapters('unread')">Unread</button>
+    <button onclick="filterChapters('read')">Read</button>
+</div>
 <ul id="chapters">
 
         <li id="chapter-0" class="unchecked">
@@ -541,13 +546,21 @@ function toggleChapter(index){
     const li = document.getElementById('chapter-'+index);
     const checkbox = li.querySelector('input[type=checkbox]');
     if(checkbox.checked){
-        li.classList.remove('unchecked');
-        li.classList.add('checked');
+        li.classList.add('checked'); li.classList.remove('unchecked');
     } else {
-        li.classList.remove('checked');
-        li.classList.add('unchecked');
+        li.classList.add('unchecked'); li.classList.remove('checked');
     }
     localStorage.setItem('chapter-'+index, checkbox.checked);
+}
+
+function filterChapters(mode){
+    const lis = document.querySelectorAll('#chapters li');
+    lis.forEach(li=>{
+        if(mode==='all'){ li.style.display='flex'; }
+        else if(mode==='read'){ li.style.display=li.classList.contains('checked')?'flex':'none'; }
+        else if(mode==='unread'){ li.style.display=li.classList.contains('unchecked')?'flex':'none'; }
+    });
+    localStorage.setItem('filterMode', mode);
 }
 
 // Restore state
@@ -557,12 +570,14 @@ window.onload = function(){
         const saved = localStorage.getItem('chapter-'+index);
         if(saved!==null){
             const checkbox = li.querySelector('input[type=checkbox]');
-            checkbox.checked = saved==='true';
-            li.classList.remove('checked','unchecked');
-            li.classList.add(checkbox.checked?'checked':'unchecked');
+            checkbox.checked = (saved==='true');
+            li.classList.toggle('checked', checkbox.checked);
+            li.classList.toggle('unchecked', !checkbox.checked);
         }
     });
-};
+    const savedFilter = localStorage.getItem('filterMode') || 'unread';
+    filterChapters(savedFilter);
+}
 </script>
 </body>
 </html>
