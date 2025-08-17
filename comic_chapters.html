@@ -57,11 +57,23 @@ li {
     margin:5px 0; padding:10px; border-radius:8px;
     background: rgba(0,0,0,0.5);
 }
-/* ✅ Fix link color and strikethrough */
-li.unchecked span:first-child a,
-li.unchecked span:first-child { color: white; text-decoration:none; }
-li.checked span:first-child a,
-li.checked span:first-child { color: black; text-decoration: line-through; }
+
+/* Updated link CSS for local clickable chapters */
+li.unchecked span:first-child,
+li.unchecked span:first-child a {
+    color: white !important;
+    text-decoration: none !important;
+}
+li.checked span:first-child,
+li.checked span:first-child a {
+    color: black !important;
+    text-decoration: line-through !important;
+}
+
+/* Alternative explicit CSS for <a> inside li */
+li.unchecked a { color: white !important; text-decoration: none !important; }
+li.checked a { color: black !important; text-decoration: line-through !important; }
+
 .date { margin-left:20px; }
 .filters { text-align:center; margin-bottom:20px; }
 .filters button { margin:0 10px; padding:5px 10px; }
