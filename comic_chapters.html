@@ -2,9 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marvel Ultimate Universe Reading Order</title>
+<title>Comic Chapters</title>
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7H4063B8W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,78 +14,52 @@
     
 <style>
 body {
-    margin: 0; padding: 0; height: 100%;
-    font-family: Arial, sans-serif;
+    margin: 0; padding: 0; font-family: Arial, sans-serif; height:100%;
 }
 
 .background {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1;
-    background: url('ultimatesroster_card_1.jpg') no-repeat center center;
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    z-index:-1; background: url('ultimatesroster_card_1.jpg') no-repeat center center;
     background-size: cover;
 }
 
 @media only screen and (max-width:768px) {
-    .background { background: url('ultimatesroster_card_0.jpg') no-repeat center center; background-size: cover; }
+    .background {
+        background: url('ultimatesroster_card_0.jpg') no-repeat center center;
+        background-size: cover;
+    }
 }
 
 .content {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 20px;
-    color: white;
+    position: relative; height: 100%; width: 100%;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding: 20px; color: white;
 }
 
 h1 { text-align:center; margin-top:20px; }
 ul { list-style:none; padding:0; margin:20px; }
-li.unchecked a { color: white !important; text-decoration: none !important; }
-li.checked a { color: black !important; text-decoration: line-through !important; }
-li.unchecked label { color: white; }
-li.checked label { color: black; text-decoration: line-through; }
-
-.chapter-container {
+li {
+    display:flex; justify-content:space-between; align-items:center;
+    margin:5px 0; padding:10px; border-radius:8px;
     background: rgba(0,0,0,0.5);
-    padding: 10px;
-    margin: 5px;
-    border-radius: 8px;
 }
-
-.chapter-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+li input[type=checkbox] { margin-right:10px; }
+li.unchecked .chapter-name { color:white; text-decoration:none; flex:1; }
+li.checked .chapter-name { color:black; text-decoration:line-through; flex:1; }
+li.unchecked .chapter-date { color:white; }
+li.checked .chapter-date { color:black; text-decoration:none; }
+@media only screen and (max-width:768px) {
+    li { flex-direction:column; align-items:flex-start; }
+    .chapter-date { font-size:0.7em; margin-top:5px; }
 }
-
-.chapter-info .date {
-    margin-left: 20px;
-}
-
 .filters { text-align:center; margin-bottom:20px; }
 .filters button { margin:0 10px; padding:5px 10px; }
-
-@media only screen and (max-width:768px) {
-    h1 { font-size:2em; }
-    .chapter-info {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .chapter-info .date {
-        font-size: 0.7em;
-        margin-left: 0;
-        margin-top: 5px;
-    }
-}
 </style>
 </head>
 <body>
 <div class="background"></div>
 <div class="content">
-<h1>Marvel Ultimate Universe Reading Order</h1>
+<h1>Comic Chapters</h1>
 <div class="filters">
     <button onclick="filterChapters('all')">All</button>
     <button onclick="filterChapters('unread')">Unread</button>
@@ -94,828 +67,503 @@ li.checked label { color: black; text-decoration: line-through; }
 </div>
 <ul id="chapters">
         <li id="chapter-0" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(0)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #1</label>
-                    <span class="date">10 Jan. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(0)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #1</span>
+            <span class="chapter-date">10 Jan. 2024</span>
         </li>
         
         <li id="chapter-1" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(1)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #1</label>
-                    <span class="date">07 Feb. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(1)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #1</span>
+            <span class="chapter-date">07 Feb. 2024</span>
         </li>
         
         <li id="chapter-2" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(2)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #2</label>
-                    <span class="date">21 Feb. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(2)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #2</span>
+            <span class="chapter-date">21 Feb. 2024</span>
         </li>
         
         <li id="chapter-3" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(3)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #1</label>
-                    <span class="date">06 Mar. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(3)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #1</span>
+            <span class="chapter-date">06 Mar. 2024</span>
         </li>
         
         <li id="chapter-4" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(4)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #2</label>
-                    <span class="date">13 Mar. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(4)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #2</span>
+            <span class="chapter-date">13 Mar. 2024</span>
         </li>
         
         <li id="chapter-5" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(5)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #3</label>
-                    <span class="date">27 Mar. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(5)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #3</span>
+            <span class="chapter-date">27 Mar. 2024</span>
         </li>
         
         <li id="chapter-6" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(6)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #2</label>
-                    <span class="date">10 Apr. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(6)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #2</span>
+            <span class="chapter-date">10 Apr. 2024</span>
         </li>
         
         <li id="chapter-7" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(7)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #3</label>
-                    <span class="date">17 Apr. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(7)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #3</span>
+            <span class="chapter-date">17 Apr. 2024</span>
         </li>
         
         <li id="chapter-8" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(8)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #4</label>
-                    <span class="date">24 Apr. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(8)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #4</span>
+            <span class="chapter-date">24 Apr. 2024</span>
         </li>
         
         <li id="chapter-9" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(9)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #3</label>
-                    <span class="date">15 May. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(9)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #3</span>
+            <span class="chapter-date">15 May. 2024</span>
         </li>
         
         <li id="chapter-10" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(10)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #4</label>
-                    <span class="date">22 May. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(10)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #4</span>
+            <span class="chapter-date">22 May. 2024</span>
         </li>
         
         <li id="chapter-11" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(11)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #5</label>
-                    <span class="date">29 May. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(11)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #5</span>
+            <span class="chapter-date">29 May. 2024</span>
         </li>
         
         <li id="chapter-12" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(12)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #1</label>
-                    <span class="date">05 Jun. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(12)">
+            <span class="chapter-name">The Ultimates (2024-) #1</span>
+            <span class="chapter-date">05 Jun. 2024</span>
         </li>
         
         <li id="chapter-13" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(13)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #4</label>
-                    <span class="date">12 Jun. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(13)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #4</span>
+            <span class="chapter-date">12 Jun. 2024</span>
         </li>
         
         <li id="chapter-14" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(14)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #6</label>
-                    <span class="date">19 Jun. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(14)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #6</span>
+            <span class="chapter-date">19 Jun. 2024</span>
         </li>
         
         <li id="chapter-15" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(15)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #5</label>
-                    <span class="date">26 Jun. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(15)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #5</span>
+            <span class="chapter-date">26 Jun. 2024</span>
         </li>
         
         <li id="chapter-16" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(16)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #2</label>
-                    <span class="date">10 Jul. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(16)">
+            <span class="chapter-name">The Ultimates (2024-) #2</span>
+            <span class="chapter-date">10 Jul. 2024</span>
         </li>
         
         <li id="chapter-17" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(17)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #5</label>
-                    <span class="date">17 Jul. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(17)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #5</span>
+            <span class="chapter-date">17 Jul. 2024</span>
         </li>
         
         <li id="chapter-18" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(18)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #6</label>
-                    <span class="date">24 Jul. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(18)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #6</span>
+            <span class="chapter-date">24 Jul. 2024</span>
         </li>
         
         <li id="chapter-19" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(19)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #7</label>
-                    <span class="date">31 Jul. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(19)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #7</span>
+            <span class="chapter-date">31 Jul. 2024</span>
         </li>
         
         <li id="chapter-20" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(20)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #7</label>
-                    <span class="date">07 Aug. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(20)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #7</span>
+            <span class="chapter-date">07 Aug. 2024</span>
         </li>
         
         <li id="chapter-21" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(21)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #3</label>
-                    <span class="date">14 Aug. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(21)">
+            <span class="chapter-name">The Ultimates (2024-) #3</span>
+            <span class="chapter-date">14 Aug. 2024</span>
         </li>
         
         <li id="chapter-22" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(22)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #8</label>
-                    <span class="date">21 Aug. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(22)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #8</span>
+            <span class="chapter-date">21 Aug. 2024</span>
         </li>
         
         <li id="chapter-23" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(23)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #6</label>
-                    <span class="date">28 Aug. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(23)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #6</span>
+            <span class="chapter-date">28 Aug. 2024</span>
         </li>
         
         <li id="chapter-24" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(24)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #4</label>
-                    <span class="date">04 Sep. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(24)">
+            <span class="chapter-name">The Ultimates (2024-) #4</span>
+            <span class="chapter-date">04 Sep. 2024</span>
         </li>
         
         <li id="chapter-25" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(25)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #8</label>
-                    <span class="date">11 Sep. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(25)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #8</span>
+            <span class="chapter-date">11 Sep. 2024</span>
         </li>
         
         <li id="chapter-26" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(26)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #7</label>
-                    <span class="date">18 Sep. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(26)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #7</span>
+            <span class="chapter-date">18 Sep. 2024</span>
         </li>
         
         <li id="chapter-27" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(27)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #9</label>
-                    <span class="date">25 Sep. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(27)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #9</span>
+            <span class="chapter-date">25 Sep. 2024</span>
         </li>
         
         <li id="chapter-28" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(28)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #9</label>
-                    <span class="date">02 Oct. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(28)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #9</span>
+            <span class="chapter-date">02 Oct. 2024</span>
         </li>
         
         <li id="chapter-29" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(29)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #5</label>
-                    <span class="date">09 Oct. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(29)">
+            <span class="chapter-name">The Ultimates (2024-) #5</span>
+            <span class="chapter-date">09 Oct. 2024</span>
         </li>
         
         <li id="chapter-30" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(30)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #10</label>
-                    <span class="date">17 Oct. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(30)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #10</span>
+            <span class="chapter-date">17 Oct. 2024</span>
         </li>
         
         <li id="chapter-31" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(31)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #8</label>
-                    <span class="date">30 Oct. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(31)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #8</span>
+            <span class="chapter-date">30 Oct. 2024</span>
         </li>
         
         <li id="chapter-32" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(32)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #6</label>
-                    <span class="date">06 Nov. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(32)">
+            <span class="chapter-name">The Ultimates (2024-) #6</span>
+            <span class="chapter-date">06 Nov. 2024</span>
         </li>
         
         <li id="chapter-33" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(33)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #9</label>
-                    <span class="date">13 Nov. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(33)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #9</span>
+            <span class="chapter-date">13 Nov. 2024</span>
         </li>
         
         <li id="chapter-34" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(34)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #11</label>
-                    <span class="date">20 Nov. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(34)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #11</span>
+            <span class="chapter-date">20 Nov. 2024</span>
         </li>
         
         <li id="chapter-35" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(35)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #10</label>
-                    <span class="date">27 Nov. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(35)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #10</span>
+            <span class="chapter-date">27 Nov. 2024</span>
         </li>
         
         <li id="chapter-36" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(36)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #7</label>
-                    <span class="date">04 Dec. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(36)">
+            <span class="chapter-name">The Ultimates (2024-) #7</span>
+            <span class="chapter-date">04 Dec. 2024</span>
         </li>
         
         <li id="chapter-37" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(37)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #10</label>
-                    <span class="date">12 Dec. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(37)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #10</span>
+            <span class="chapter-date">12 Dec. 2024</span>
         </li>
         
         <li id="chapter-38" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(38)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #12</label>
-                    <span class="date">18 Dec. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(38)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #12</span>
+            <span class="chapter-date">18 Dec. 2024</span>
         </li>
         
         <li id="chapter-39" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(39)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #11</label>
-                    <span class="date">25 Dec. 2024</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(39)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #11</span>
+            <span class="chapter-date">25 Dec. 2024</span>
         </li>
         
         <li id="chapter-40" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(40)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #8</label>
-                    <span class="date">01 Jan. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(40)">
+            <span class="chapter-name">The Ultimates (2024-) #8</span>
+            <span class="chapter-date">01 Jan. 2025</span>
         </li>
         
         <li id="chapter-41" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(41)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #12</label>
-                    <span class="date">08 Jan. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(41)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #12</span>
+            <span class="chapter-date">08 Jan. 2025</span>
         </li>
         
         <li id="chapter-42" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(42)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #1</label>
-                    <span class="date">15 Jan. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(42)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #1</span>
+            <span class="chapter-date">15 Jan. 2025</span>
         </li>
         
         <li id="chapter-43" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(43)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #13</label>
-                    <span class="date">22 Jan. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(43)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #13</span>
+            <span class="chapter-date">22 Jan. 2025</span>
         </li>
         
         <li id="chapter-44" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(44)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #11</label>
-                    <span class="date">29 Jan. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(44)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #11</span>
+            <span class="chapter-date">29 Jan. 2025</span>
         </li>
         
         <li id="chapter-45" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(45)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #9</label>
-                    <span class="date">05 Feb. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(45)">
+            <span class="chapter-name">The Ultimates (2024-) #9</span>
+            <span class="chapter-date">05 Feb. 2025</span>
         </li>
         
         <li id="chapter-46" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(46)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #13</label>
-                    <span class="date">19 Feb. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(46)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #13</span>
+            <span class="chapter-date">19 Feb. 2025</span>
         </li>
         
         <li id="chapter-47" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(47)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #2</label>
-                    <span class="date">19 Feb. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(47)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #2</span>
+            <span class="chapter-date">19 Feb. 2025</span>
         </li>
         
         <li id="chapter-48" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(48)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #14</label>
-                    <span class="date">26 Feb. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(48)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #14</span>
+            <span class="chapter-date">26 Feb. 2025</span>
         </li>
         
         <li id="chapter-49" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(49)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #12</label>
-                    <span class="date">26 Feb. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(49)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #12</span>
+            <span class="chapter-date">26 Feb. 2025</span>
         </li>
         
         <li id="chapter-50" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(50)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #10</label>
-                    <span class="date">05 Mar. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(50)">
+            <span class="chapter-name">The Ultimates (2024-) #10</span>
+            <span class="chapter-date">05 Mar. 2025</span>
         </li>
         
         <li id="chapter-51" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(51)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #14</label>
-                    <span class="date">19 Mar. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(51)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #14</span>
+            <span class="chapter-date">19 Mar. 2025</span>
         </li>
         
         <li id="chapter-52" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(52)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #13</label>
-                    <span class="date">19 Mar. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(52)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #13</span>
+            <span class="chapter-date">19 Mar. 2025</span>
         </li>
         
         <li id="chapter-53" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(53)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #15</label>
-                    <span class="date">26 Mar. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(53)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #15</span>
+            <span class="chapter-date">26 Mar. 2025</span>
         </li>
         
         <li id="chapter-54" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(54)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #3</label>
-                    <span class="date">26 Mar. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(54)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #3</span>
+            <span class="chapter-date">26 Mar. 2025</span>
         </li>
         
         <li id="chapter-55" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(55)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #14</label>
-                    <span class="date">02 Apr. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(55)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #14</span>
+            <span class="chapter-date">02 Apr. 2025</span>
         </li>
         
         <li id="chapter-56" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(56)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #11</label>
-                    <span class="date">09 Apr. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(56)">
+            <span class="chapter-name">The Ultimates (2024-) #11</span>
+            <span class="chapter-date">09 Apr. 2025</span>
         </li>
         
         <li id="chapter-57" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(57)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #4</label>
-                    <span class="date">16 Apr. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(57)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #4</span>
+            <span class="chapter-date">16 Apr. 2025</span>
         </li>
         
         <li id="chapter-58" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(58)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #15</label>
-                    <span class="date">23 Apr. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(58)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #15</span>
+            <span class="chapter-date">23 Apr. 2025</span>
         </li>
         
         <li id="chapter-59" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(59)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #16</label>
-                    <span class="date">30 Apr. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(59)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #16</span>
+            <span class="chapter-date">30 Apr. 2025</span>
         </li>
         
         <li id="chapter-60" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(60)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #5</label>
-                    <span class="date">07 May. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(60)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #5</span>
+            <span class="chapter-date">07 May. 2025</span>
         </li>
         
         <li id="chapter-61" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(61)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #16</label>
-                    <span class="date">14 May. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(61)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #16</span>
+            <span class="chapter-date">14 May. 2025</span>
         </li>
         
         <li id="chapter-62" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(62)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #15</label>
-                    <span class="date">14 May. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(62)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #15</span>
+            <span class="chapter-date">14 May. 2025</span>
         </li>
         
         <li id="chapter-63" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(63)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #12</label>
-                    <span class="date">21 May. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(63)">
+            <span class="chapter-name">The Ultimates (2024-) #12</span>
+            <span class="chapter-date">21 May. 2025</span>
         </li>
         
         <li id="chapter-64" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(64)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #17</label>
-                    <span class="date">28 May. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(64)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #17</span>
+            <span class="chapter-date">28 May. 2025</span>
         </li>
         
         <li id="chapter-65" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(65)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man: Incursion (2025-) #1</label>
-                    <span class="date">04 Jun. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(65)">
+            <span class="chapter-name">Ultimate Spider-Man: Incursion (2025-) #1</span>
+            <span class="chapter-date">04 Jun. 2025</span>
         </li>
         
         <li id="chapter-66" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(66)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #6</label>
-                    <span class="date">04 Jun. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(66)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #6</span>
+            <span class="chapter-date">04 Jun. 2025</span>
         </li>
         
         <li id="chapter-67" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(67)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #17</label>
-                    <span class="date">11 Jun. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(67)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #17</span>
+            <span class="chapter-date">11 Jun. 2025</span>
         </li>
         
         <li id="chapter-68" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(68)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #16</label>
-                    <span class="date">11 Jun. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(68)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #16</span>
+            <span class="chapter-date">11 Jun. 2025</span>
         </li>
         
         <li id="chapter-69" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(69)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #13</label>
-                    <span class="date">18 Jun. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(69)">
+            <span class="chapter-name">The Ultimates (2024-) #13</span>
+            <span class="chapter-date">18 Jun. 2025</span>
         </li>
         
         <li id="chapter-70" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(70)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #18</label>
-                    <span class="date">25 Jun. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(70)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #18</span>
+            <span class="chapter-date">25 Jun. 2025</span>
         </li>
         
         <li id="chapter-71" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(71)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #7</label>
-                    <span class="date">02 Jul. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(71)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #7</span>
+            <span class="chapter-date">02 Jul. 2025</span>
         </li>
         
         <li id="chapter-72" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(72)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man: Incursion (2025-) #2</label>
-                    <span class="date">09 Jul. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(72)">
+            <span class="chapter-name">Ultimate Spider-Man: Incursion (2025-) #2</span>
+            <span class="chapter-date">09 Jul. 2025</span>
         </li>
         
         <li id="chapter-73" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(73)">
-                <div class="chapter-info">
-                    <label>Ultimate Black Panther (2024-) #18</label>
-                    <span class="date">16 Jul. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(73)">
+            <span class="chapter-name">Ultimate Black Panther (2024-) #18</span>
+            <span class="chapter-date">16 Jul. 2025</span>
         </li>
         
         <li id="chapter-74" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(74)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #17</label>
-                    <span class="date">16 Jul. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(74)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #17</span>
+            <span class="chapter-date">16 Jul. 2025</span>
         </li>
         
         <li id="chapter-75" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(75)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man (2024-) #19</label>
-                    <span class="date">30 Jul. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(75)">
+            <span class="chapter-name">Ultimate Spider-Man (2024-) #19</span>
+            <span class="chapter-date">30 Jul. 2025</span>
         </li>
         
         <li id="chapter-76" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(76)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #14</label>
-                    <span class="date">30 Jul. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(76)">
+            <span class="chapter-name">The Ultimates (2024-) #14</span>
+            <span class="chapter-date">30 Jul. 2025</span>
         </li>
         
         <li id="chapter-77" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(77)">
-                <div class="chapter-info">
-                    <label>Ultimate X-Men (2024-) #18</label>
-                    <span class="date">06 Aug. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(77)">
+            <span class="chapter-name">Ultimate X-Men (2024-) #18</span>
+            <span class="chapter-date">06 Aug. 2025</span>
         </li>
         
         <li id="chapter-78" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(78)">
-                <div class="chapter-info">
-                    <label>Ultimate Wolverine (2025-) #8</label>
-                    <span class="date">06 Aug. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(78)">
+            <span class="chapter-name">Ultimate Wolverine (2025-) #8</span>
+            <span class="chapter-date">06 Aug. 2025</span>
         </li>
         
         <li id="chapter-79" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(79)">
-                <div class="chapter-info">
-                    <label>The Ultimates (2024-) #15</label>
-                    <span class="date">13 Aug. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(79)">
+            <span class="chapter-name">The Ultimates (2024-) #15</span>
+            <span class="chapter-date">13 Aug. 2025</span>
         </li>
         
         <li id="chapter-80" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter(80)">
-                <div class="chapter-info">
-                    <label>Ultimate Spider-Man: Incursion (2025-) #3</label>
-                    <span class="date">13 Aug. 2025</span>
-                </div>
-            </div>
+            <input type="checkbox"  onchange="toggleChapter(80)">
+            <span class="chapter-name">Ultimate Spider-Man: Incursion (2025-) #3</span>
+            <span class="chapter-date">13 Aug. 2025</span>
         </li>
         </ul>
 <script>
-function toggleChapter(index) {
+function toggleChapter(index){
     const li = document.getElementById('chapter-'+index);
     const checkbox = li.querySelector('input[type=checkbox]');
-    if (checkbox.checked) {
+    if(checkbox.checked){
         li.classList.remove('unchecked'); li.classList.add('checked');
-    } else {
+    }else{
         li.classList.remove('checked'); li.classList.add('unchecked');
     }
     localStorage.setItem('chapter-'+index, checkbox.checked);
 }
-
-function filterChapters(mode) {
+function filterChapters(mode){
     const lis = document.querySelectorAll('#chapters li');
     lis.forEach(li => {
         if(mode==='all') li.style.display='flex';
@@ -924,8 +572,7 @@ function filterChapters(mode) {
     });
     localStorage.setItem('filterMode', mode);
 }
-
-window.onload = function() {
+window.onload = function(){
     const lis = document.querySelectorAll('#chapters li');
     lis.forEach((li,index) => {
         const saved = localStorage.getItem('chapter-'+index);
