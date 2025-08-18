@@ -46,8 +46,7 @@ ul { list-style:none; padding:0; margin:20px; }
     display: flex; justify-content: space-between; align-items: center;
     background: rgba(0,0,0,0.5); padding:10px; margin:5px; border-radius:8px;
 }
-.chapter-container input[type=checkbox] { margin-right:10px; }
-.chapter-container label { flex: 1; }
+.chapter-container label { flex: 1; margin-left: 10px; }
 .chapter-container .chapter-date { flex-shrink: 0; }
 .filters { text-align:center; margin-bottom:20px; }
 .filters button { margin:0 10px; padding:5px 10px; }
@@ -58,15 +57,12 @@ ul { list-style:none; padding:0; margin:20px; }
     .chapter-container .chapter-date { font-size:0.7em; margin-top:5px; }
 }
 
-li a, li label { color: white !important; text-decoration: none !important; }
-li.checked a, li.checked label { color: black !important; text-decoration: line-through !important; }
-
 </style>
 </head>
 <body>
 <div class="background"></div>
 <div class="content">
-<h1>Comic Chapters</h1>
+<h1>Marvel Ultimate Universe Reading Order</h1>
 <div class="filters">
     <button onclick="filterChapters('all')">All</button>
     <button onclick="filterChapters('unread')">Unread</button>
