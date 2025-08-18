@@ -43,14 +43,26 @@ body {
 h1 { text-align:center; margin-top:20px; }
 ul { list-style:none; padding:0; margin:20px; }
 .chapter-container {
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(0,0,0,0.5); padding:10px; margin:5px; border-radius:8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: rgba(0,0,0,0.5); 
+    padding:10px; 
+    margin:5px; 
+    border-radius:8px;
 }
-.chapter-container .left { display: flex; align-items: center; }
-.chapter-container label, .chapter-container a { margin-left: 10px; }
-.chapter-container .right { flex-shrink: 0; }
-li.checked label, li.checked a { text-decoration: line-through; color: black; }
-li.unchecked label, li.unchecked a { text-decoration: none; color: white; }
+.chapter-container .left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.chapter-container label, .chapter-container a {
+    margin-left: 10px;
+}
+.chapter-container .right {
+    flex-shrink: 0;
+}
 .filters { text-align:center; margin-bottom:20px; }
 .filters button { margin:0 10px; padding:5px 10px; }
 
