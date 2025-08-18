@@ -43,34 +43,19 @@ body {
 h1 { text-align:center; margin-top:20px; }
 ul { list-style:none; padding:0; margin:20px; }
 .chapter-container {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 8px;
-    box-sizing: border-box;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(0,0,0,0.5); padding:10px; margin:5px; border-radius:8px;
 }
-.chapter-container input[type="checkbox"] { flex-shrink: 0; }
-.chapter-container label { margin-left: 10px; flex: 0 1 auto; }
-.chapter-container .chapter-date { margin-left: auto; flex-shrink: 0; }
+.chapter-container label { flex: 1; margin-left: 10px; }
+.chapter-container .chapter-date { flex-shrink: 0; }
 .filters { text-align:center; margin-bottom:20px; }
 .filters button { margin:0 10px; padding:5px 10px; }
-
-/* Line-through black for comic_chapters.html */
-li.unchecked a, li.unchecked label { color: white !important; text-decoration: none !important; }
-li.checked a, li.checked label { color: black !important; text-decoration: line-through !important; }
-
-/* Local HTML links */
-
-
 @media only screen and (max-width:768px) {
     h1 { font-size:2em; }
     .chapter-container { flex-direction: column; align-items:flex-start; }
-    .chapter-container .chapter-date { font-size:0.7em; margin-top:5px; margin-left:0; }
+    .chapter-container .chapter-date { font-size:0.7em; margin-top:5px; }
 }
+
 </style>
 </head>
 <body>
@@ -78,9 +63,9 @@ li.checked a, li.checked label { color: black !important; text-decoration: line-
 <div class="content">
 <h1>Marvel Ultimate Universe Reading Order</h1>
 <div class="filters">
-    <button onclick="filterChapters('all')">All</button>
-    <button onclick="filterChapters('unread')">Unread</button>
-    <button onclick="filterChapters('read')">Read</button>
+    <button onclick="filterChapters('all')">All (<span id='count-all'></span>)</button>
+    <button onclick="filterChapters('unread')">Unread (<span id='count-unread'></span>)</button>
+    <button onclick="filterChapters('read')">Read (<span id='count-read'></span>)</button>
 </div>
 <ul id="chapters">
         <li id="chapter-0" class="unchecked">
@@ -741,6 +726,7 @@ function toggleChapter(index) {
         li.classList.remove('checked'); li.classList.add('unchecked');
     }
     localStorage.setItem('chapter-'+index, checkbox.checked);
+    updateCounts();
 }
 
 function filterChapters(mode) {
@@ -751,6 +737,20 @@ function filterChapters(mode) {
         else if(mode==='unread') li.style.display = li.classList.contains('unchecked') ? 'flex':'none';
     });
     localStorage.setItem('filterMode', mode);
+    updateCounts();
+}
+
+function updateCounts() {
+    const lis = document.querySelectorAll('#chapters li');
+    let total=0, read=0, unread=0;
+    lis.forEach(li => {
+        total++;
+        if(li.classList.contains('checked')) read++;
+        else unread++;
+    });
+    document.getElementById('count-all').textContent = total;
+    document.getElementById('count-read').textContent = read;
+    document.getElementById('count-unread').textContent = unread;
 }
 
 window.onload = function() {
@@ -766,6 +766,7 @@ window.onload = function() {
     });
     const savedFilter = localStorage.getItem('filterMode') || 'unread';
     filterChapters(savedFilter);
+    updateCounts();
 }
 </script>
 </div>
