@@ -564,10 +564,20 @@ function updateCounts() {
 function toggleChapter(prefix, index) {
     const li = document.getElementById(prefix+'-'+index);
     const checkbox = li.querySelector('input[type=checkbox]');
-    if(checkbox.checked) { li.classList.remove('unchecked'); li.classList.add('checked'); }
-    else { li.classList.remove('checked'); li.classList.add('unchecked'); }
+    if(checkbox.checked) {
+        li.classList.remove('unchecked');
+        li.classList.add('checked');
+    } else {
+        li.classList.remove('checked');
+        li.classList.add('unchecked');
+    }
     localStorage.setItem('ultimate-'+prefix+'-chapter-'+index, checkbox.checked);
+
     updateCounts();
+
+    // Instantly apply current filter
+    const currentFilter = localStorage.getItem('ultimate-filterMode') || 'all';
+    filterChapters(currentFilter);
 }
 
 function liClick(prefix, index, event) {
@@ -579,7 +589,12 @@ function liClick(prefix, index, event) {
         li.classList.toggle('checked', checkbox.checked);
         li.classList.toggle('unchecked', !checkbox.checked);
         localStorage.setItem('ultimate-'+prefix+'-chapter-'+index, checkbox.checked);
+
         updateCounts();
+
+        // Instantly apply current filter
+        const currentFilter = localStorage.getItem('ultimate-filterMode') || 'all';
+        filterChapters(currentFilter);
     }
 }
 
@@ -606,6 +621,8 @@ function markAll(prefix, read=true) {
         }
     });
     updateCounts();
+    const currentFilter = localStorage.getItem('ultimate-filterMode') || 'all';
+    filterChapters(currentFilter);
 }
 
 function filterBySearch() {
@@ -624,6 +641,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const allLis = document.querySelectorAll('#all-chapters li');
     const now = Date.now();
 
+    // Move chapters older than 24h from new -> all
     newLis.forEach((li,index) => {
         const storedKey = 'ultimate-new-chapter-'+index;
         let stored = localStorage.getItem(storedKey);
@@ -637,6 +655,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Restore glow for All Chapters
     allLis.forEach(li => {
         const glowKey = 'ultimate-orange-glow-'+li.id;
         const glowStart = localStorage.getItem(glowKey);
@@ -652,6 +671,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Restore checkboxes for All Chapters
     allLis.forEach((li,index) => {
         const checkbox = li.querySelector('input[type=checkbox]');
         if(checkbox) {
@@ -661,6 +681,8 @@ window.addEventListener('DOMContentLoaded', () => {
             checkbox.addEventListener('change', ()=> {
                 localStorage.setItem('ultimate-all-chapter-'+index, checkbox.checked);
                 updateCounts();
+                const currentFilter = localStorage.getItem('ultimate-filterMode') || 'all';
+                filterChapters(currentFilter);
             });
         }
     });
