@@ -72,6 +72,14 @@ li.checked a, li.checked label { color: black; text-decoration: line-through; }
     <button onclick="filterChapters('read')">Read (<span id='count-read'></span>)</button>
 </div>
 <ul id="chapters">
+        <li id="chapter-new-0" class="unchecked">
+            <div class="chapter-container">
+                <input type="checkbox"  onchange="toggleChapter('new-0')">
+                <label>Ultimate Black Panther (2024-) #19</label>
+                <span class="chapter-date">20 Aug. 2025</span>
+            </div>
+        </li>
+        
         <li id="chapter-all-0" class="unchecked">
             <div class="chapter-container">
                 <input type="checkbox"  onchange="toggleChapter('all-0')">
@@ -717,14 +725,6 @@ li.checked a, li.checked label { color: black; text-decoration: line-through; }
                 <input type="checkbox"  onchange="toggleChapter('all-80')">
                 <label>Ultimate Spider-Man: Incursion (2025-) #3</label>
                 <span class="chapter-date">13 Aug. 2025</span>
-            </div>
-        </li>
-        
-        <li id="chapter-all-81" class="unchecked">
-            <div class="chapter-container">
-                <input type="checkbox"  onchange="toggleChapter('all-81')">
-                <label>Ultimate Black Panther (2024-) #19</label>
-                <span class="chapter-date">20 Aug. 2025</span>
             </div>
         </li>
         </ul>
