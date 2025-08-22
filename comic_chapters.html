@@ -28,6 +28,10 @@ li.checked span.title, li.checked span.title a { color:black !important; text-de
     box-shadow: 0 0 10px orange;
     border: 2px solid orange;
 }
+.search-box { text-align:center; margin-bottom:15px; }
+.search-box input { padding:8px; width:60%; border-radius:5px; border:none; }
+.mark-buttons { text-align:center; margin:10px 0; }
+.mark-buttons button { margin:0 5px; padding:5px 12px; cursor:pointer; }
 @media only screen and (max-width:768px) {
     h1 { font-size:2em; }
     li { flex-direction:column; align-items:flex-start; padding:10px; }
@@ -39,6 +43,17 @@ li.checked span.title, li.checked span.title a { color:black !important; text-de
 <div class="background"></div>
 <div class="content">
 <h1>Ultimate Spider-Man Universe Reading Order</h1>
+
+<!-- Search box -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search chapters by title..." onkeyup="filterBySearch()">
+</div>
+
+<!-- Mark buttons -->
+<div class="mark-buttons">
+  <button onclick="markAll('all', true)">Mark All Read</button>
+  <button onclick="markAll('all', false)">Mark All Unread</button>
+</div>
 
 <div class="new-section">
 <h2>New Chapters</h2>
@@ -574,6 +589,31 @@ function filterChapters(mode) {
         else if(mode==='unread') li.style.display = li.classList.contains('unchecked') ? 'flex':'none';
     });
     localStorage.setItem('ultimate-filterMode', mode);
+}
+
+function markAll(prefix, read=true) {
+    const allLis = document.querySelectorAll('#'+prefix+'-chapters li');
+    allLis.forEach((li,index)=>{
+        const checkbox = li.querySelector('input[type=checkbox]');
+        if(checkbox) {
+            checkbox.checked = read;
+            li.classList.remove('checked','unchecked');
+            li.classList.add(read?'checked':'unchecked');
+            localStorage.setItem('ultimate-'+prefix+'-chapter-'+index, read);
+        }
+    });
+    updateCounts();
+}
+
+function filterBySearch() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const allLis = document.querySelectorAll('#all-chapters li');
+    const newLis = document.querySelectorAll('#new-chapters li');
+    [...allLis, ...newLis].forEach(li => {
+        const title = li.querySelector('.title').innerText.toLowerCase();
+        if(title.includes(input)) li.style.display = 'flex';
+        else li.style.display = 'none';
+    });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
