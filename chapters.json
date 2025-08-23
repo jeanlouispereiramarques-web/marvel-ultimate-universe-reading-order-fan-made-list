@@ -485,9 +485,7 @@
       "url": "https://readcomicsonline.ru/comic/ultimate-wolverine-2025/1",
       "date": "15 Jan. 2025",
       "checked": false
-    }
-  ],
-  "new_chapters": [
+    },
     {
       "title": "Ultimate Black Panther (2024-) #19",
       "url": "https://readcomicsonline.ru/comic/ultimate-black-panther-2024/19",
@@ -495,5 +493,6 @@
       "checked": false,
       "added_ts": 1755878279703
     }
-  ]
+  ],
+  "new_chapters": []
 }
