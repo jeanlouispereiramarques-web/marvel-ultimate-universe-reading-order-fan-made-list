@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ultimate Spider-Man Universe Reading Order</title>
 <style>
+/* Keep your existing CSS exactly as before */
 html, body { margin:0; padding:0; height:100%; font-family: Arial, sans-serif; color:white; }
 body { overflow:hidden; }
 .background { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; background:url('ultimatesroster_card_1.jpg') no-repeat center center; background-size:cover; }
@@ -632,31 +633,35 @@ li.checked span.title, li.checked span.title a { color:green !important; text-de
             </ul>
 
 <script>
-// Embedded new chapters for local use
+// === Embedded new chapters for local JS use ===
 const embeddedNewChapters = [{"title": "Ultimate Black Panther (2024-) #19", "url": "https://readcomicsonline.ru/comic/ultimate-black-panther-2024/19", "date": "20 Aug. 2025", "checked": false, "added_ts": 1755997894692}];
 
-// === Existing JS functions for toggling, filtering, marking, glow etc. ===
-// ... keep all your previous JS intact (toggleChapter, liClick, filterChapters, markAll, filterBySearch, window DOMContentLoaded logic) ...
-
+// === KEEP ALL YOUR ORIGINAL JS FUNCTIONS INTACT ===
+// toggleChapter, liClick, filterChapters, markAll, filterBySearch, DOMContentLoaded logic
+// but add orange-glow logic for chapters moved from new -> all
 window.addEventListener('DOMContentLoaded', () => {
     const newLis = document.querySelectorAll('#new-chapters li');
     const allLis = document.querySelectorAll('#all-chapters li');
     const now = Date.now();
 
-    // Glow logic for newly moved chapters
+    // Orange glow for chapters older than 24h
     newLis.forEach(li => {
         const addedTs = parseInt(li.dataset.addedTs) || now;
         if(now - addedTs > 24*60*60*1000) {
             li.classList.add('orange-glow');
             localStorage.setItem('ultimate-orange-glow-' + li.id, addedTs);
 
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            li.insertBefore(checkbox, li.firstChild);
+            // Add checkbox if missing
+            if(!li.querySelector('input[type=checkbox]')) {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                li.insertBefore(checkbox, li.firstChild);
+            }
             document.getElementById('all-chapters').appendChild(li);
         }
     });
 
+    // Restore glow for All Chapters
     allLis.forEach(li => {
         const glowTs = parseInt(localStorage.getItem('ultimate-orange-glow-' + li.id)) || 0;
         if(glowTs && now - glowTs < 24*60*60*1000) {
