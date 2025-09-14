@@ -501,5 +501,27 @@
       "added_ts": 1756313782119
     }
   ],
-  "new_chapters": []
+  "new_chapters": [
+    {
+      "title": "Ultimate X-Men (2024-) #19",
+      "url": "https://readcomicsonline.ru/comic/ultimate-xmen-2024/19",
+      "date": "09 Sep. 2025",
+      "checked": false,
+      "added_ts": 1757867917212
+    },
+    {
+      "title": "Ultimate Spider-Man: Incursion (2025-) #4",
+      "url": "https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/4",
+      "date": "10 Sep. 2025",
+      "checked": false,
+      "added_ts": 1757867917212
+    },
+    {
+      "title": "Ultimate Wolverine (2025-) #9",
+      "url": "https://readcomicsonline.ru/comic/ultimate-wolverine-2025/9",
+      "date": "10 Sep. 2025",
+      "checked": false,
+      "added_ts": 1757867917212
+    }
+  ]
 }
