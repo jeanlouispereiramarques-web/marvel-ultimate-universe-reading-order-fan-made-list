@@ -520,9 +520,7 @@
       "date": "10 Sep. 2025",
       "checked": false,
       "added_ts": 1757867917212
-    }
-  ],
-  "new_chapters": [
+    },
     {
       "title": "The Ultimates (2024-) #16",
       "url": "https://readcomicsonline.ru/comic/the-ultimates-2024/16",
@@ -536,6 +534,15 @@
       "date": "17 Sep. 2025",
       "checked": false,
       "added_ts": 1758121461633
+    }
+  ],
+  "new_chapters": [
+    {
+      "title": "Ultimate Spider-Man (2024-) #21",
+      "url": "https://readcomicsonline.ru/comic/ultimate-spiderman-2024/21",
+      "date": "24 Sep. 2025",
+      "checked": false,
+      "added_ts": 1759115992882
     }
   ]
 }
