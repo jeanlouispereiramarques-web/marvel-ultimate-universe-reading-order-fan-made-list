@@ -541,9 +541,7 @@
       "date": "24 Sep. 2025",
       "checked": false,
       "added_ts": 1759115992882
-    }
-  ],
-  "new_chapters": [
+    },
     {
       "title": "Ultimate X-Men (2024-) #20",
       "url": "https://readcomicsonline.ru/comic/ultimate-xmen-2024/20",
@@ -558,5 +556,6 @@
       "checked": false,
       "added_ts": 1759343669098
     }
-  ]
+  ],
+  "new_chapters": []
 }
