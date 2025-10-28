@@ -564,5 +564,27 @@
       "added_ts": 1760232097042
     }
   ],
-  "new_chapters": []
+  "new_chapters": [
+    {
+      "title": "Ultimate Spider-Man (2024-) #22",
+      "url": "https://readcomicsonline.ru/comic/ultimate-spiderman-2024/22",
+      "date": "22 Oct. 2025",
+      "checked": false,
+      "added_ts": 1761651661466
+    },
+    {
+      "title": "The Ultimates (2024-) #17",
+      "url": "https://readcomicsonline.ru/comic/the-ultimates-2024/17",
+      "date": "22 Oct. 2025",
+      "checked": false,
+      "added_ts": 1761651661466
+    },
+    {
+      "title": "Ultimate Spider-Man: Incursion (2025-) #5",
+      "url": "https://readcomicsonline.ru/comic/ultimate-spiderman-incursion-2025/5",
+      "date": "22 Oct. 2025",
+      "checked": false,
+      "added_ts": 1761651661466
+    }
+  ]
 }
