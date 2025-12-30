@@ -618,9 +618,7 @@
       "date": "03 Dec. 2025",
       "checked": false,
       "added_ts": 1765162203372
-    }
-  ],
-  "new_chapters": [
+    },
     {
       "title": "Ultimate Spider-Man (2024-) #23",
       "url": "https://readcomicsonline.ru/comic/ultimate-spiderman-2024/23",
@@ -642,5 +640,6 @@
       "checked": false,
       "added_ts": 1765964793653
     }
-  ]
+  ],
+  "new_chapters": []
 }
