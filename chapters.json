@@ -641,5 +641,34 @@
       "added_ts": 1765964793653
     }
   ],
-  "new_chapters": []
+  "new_chapters": [
+    {
+      "title": "The Ultimates (2024-) #20",
+      "url": "https://readcomicsonline.ru/comic/the-ultimates-2024/20",
+      "date": "14 Jan. 2026",
+      "checked": false,
+      "added_ts": 1768931517590
+    },
+    {
+      "title": "The Ultimates (2024-) #19",
+      "url": "https://readcomicsonline.ru/comic/the-ultimates-2024/19",
+      "date": "31 Dec. 2025",
+      "checked": false,
+      "added_ts": 1768931517590
+    },
+    {
+      "title": "Ultimate X-Men (2024-) #23",
+      "url": "https://readcomicsonline.ru/comic/ultimate-xmen-2024/23",
+      "date": "07 Jan. 2026",
+      "checked": false,
+      "added_ts": 1768931517590
+    },
+    {
+      "title": "Ultimate Wolverine (2025-) #13",
+      "url": "https://readcomicsonline.ru/comic/ultimate-wolverine-2025/13",
+      "date": "07 Jan. 2026",
+      "checked": false,
+      "added_ts": 1768931517590
+    }
+  ]
 }
